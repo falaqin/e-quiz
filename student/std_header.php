@@ -36,15 +36,15 @@ else
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+
                 <li class="nav-item">
                 <a class="nav-link active" href="index.php">Home</a>
                 </li>
+
                 <li class="nav-item">
-                <a class="nav-link" href="std_quiz.php">Quiz</a>
+                <a class="nav-link" href="history.php">History</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Placeholder</a>
-                </li>
+
                 <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout</a>
                 </li>

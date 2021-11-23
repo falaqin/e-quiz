@@ -1,7 +1,6 @@
 <?php
 //Import header file
-include('sv_header.php');
-include('sv_footer.php');
+include('admin_header.php');
 
 //Import database connection
 include('../inc/database.php');
@@ -26,7 +25,7 @@ if(isset($_POST['save']))
     if($conn->query($sql))
     {
         //Redirect to home page
-        header("Location:index.php");
+        header("Location:student_info.php");
     }
     else
     {
@@ -35,8 +34,6 @@ if(isset($_POST['save']))
     }
 }
 ?>
-
-
 
 <div class="container bg-gradient text-light">
     <br>
@@ -69,7 +66,6 @@ if(isset($_POST['save']))
         </div>
 
         <input type="submit" name="save" value="Save" class="btn btn-primary">
-        
     </form>
 
 </div>
@@ -83,5 +79,5 @@ if(isset($_POST['save']))
 
 <?php
 //Import footer file
-include('sv_footer.php');
+include('admin_footer.php');
 ?>

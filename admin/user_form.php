@@ -5,77 +5,109 @@ include('admin_header.php');
 //import data cons
 include('../inc/database.php');
 
-//if button save clicked
-if(isset($_POST['save']))
-{
-    //receive data from input
-    $p=$_POST;
-    $name=$p['name'];
-    $staff_no=$p['staff_no'];
-    $username=$p['username'];
-    $password=md5($p['password']); //encrypt password
-    $access_level=$p['access_level'];
+//for looping
+$loopinput = '<div class="card text-dark col-md-4 d-flex" style="width: 30rem;">
+<div class="card-body">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name[]" id="" class="form-control" required>
+    </div>
 
-    //run sql
-    $sql="INSERT INTO user(user_name, user_staffno, u_username, u_password, u_access_lvl)
-    VALUES ('$name', '$staff_no', '$username', '$password', '$access_level')";
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username[]" id="" class="form-control" required>
+    </div>
 
-    //if sql statement no error
-    if($conn->query($sql))
-    {
-        //redirect to user page
-        header("Location:user.php");
-    }
-    else
-    {
-        //if theres error
-        die("SQL error report ".$conn->error);
-    }
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password[]" id="" class="form-control" required>
+    </div>
 
-}
+    <div class="form-group">
+        <label for="access_level">Access Level</label>
+        <select name="access_level[]" id="access_level" class="form-control" required>
+            <option value="">Please Choose</option>
+            <option value="1">Admin</option>
+            <option value="2">Lecturer</option>
+        </select>
+    </div>
+</div>
+</div>
+<br>';
 ?>
 
-<div class="container bg-gradient text-light">
+<div class="container bg-gradient text-light"> 
     <br>
     <h2>
-        User Form <a href="user.php" class="btn btn-sm btn-secondary">Back</a>
+        User Form <a href="#addmore" data-bs-toggle="modal" class="btn btn-sm btn-info">Add More</a>
     </h2>
+    <div class="container text-light row">
+        <form method="post" action="add_user.php" style="width: 500px;">
+            <div class="card text-dark col-md-4 d-flex" style="width: 30rem;">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name[]" id="" class="form-control" required>
+                    </div>
 
-    <form method="post" action="">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="" class="form-control" required>
-        </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username[]" id="" class="form-control" required>
+                    </div>
 
-        <div class="form-group">
-            <label for="staff_no">Staff No</label>
-            <input type="text" name="staff_no" id="" class="form-control" required>
-        </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password[]" id="" class="form-control" required>
+                    </div>
 
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="" class="form-control" required>
-        </div>
-
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="" class="form-control" required>
-        </div>
-
-        <div class="form-group">
-            <label for="access_level">Access Level</label>
-            <select name="access_level" id="access_level" class="form-control" required>
-                <option value="">Please Choose</option>
-                <option value="1">Admin</option>
-                <option value="2">Supervisor</option>
-            </select>
-        </div>
-
-        <div>
-            <input type="submit" name="save" id="" class="btn btn-primary">
-        </div>
-    </form>
+                    <div class="form-group">
+                        <label for="access_level">Access Level</label>
+                        <select name="access_level[]" id="access_level" class="form-control" required>
+                            <option value="">Please Choose</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Lecturer</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <?php if(isset($_POST['test'])) {
+                for ($i=0; $i < $_POST['amountuser'] - 1 ; $i++) { 
+                    echo $loopinput;
+                }
+            } ?>
+            <div class="card text-dark">
+                <div class="card-body">
+                    <a href="user_info.php" class="btn btn-secondary">Back</a>
+                    <input type="submit" name="save" id="" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
+
+
+<div class="modal fade" id="addmore" aria-labelledby="exampleModalLabel" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add more users</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="post">
+                <div class="modal-body">
+                    <label for="amountuser">Enter amount of users</label>
+                    <input type="number" name="amountuser" class="form-control" value="1" min="1" max="100">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" name="test" class="btn btn-success">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 <style>
         .form-group

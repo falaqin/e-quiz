@@ -15,7 +15,7 @@ $query=$conn->query($sql);
 <div class="container text-light">
     <br>
     <h2>
-        User Info <a href="user_form.php" class="btn btn-sm btn-primary">Add</a>
+        User Info <a href="user_form.php" class="btn btn-sm btn-primary">Add User</a>
     </h2>
 
     <table class="table table-dark table-striped text-light">
@@ -24,7 +24,7 @@ $query=$conn->query($sql);
                 <th>No</th>
                 <th>Name</th>
                 <th>Username</th>
-                <th>Staff No</th>
+                <th>Staff ID</th>
                 <th>Access Level</th>
                 <th>Configuration</th>
             </tr>
@@ -34,7 +34,7 @@ $query=$conn->query($sql);
             <?php
                 //set val for number of access lvl
                 $access[1]='Admin';
-                $access[2]='Supervisor';
+                $access[2]='Lecturer';
 
                 //initiate num
                 $no=1;
@@ -61,7 +61,7 @@ $query=$conn->query($sql);
                 </td>
                 <td>
                     <?php 
-                    echo $row['user_staffno'];
+                    echo $row['u_id'];
                     ?>
                 </td>
                 <td>

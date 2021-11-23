@@ -6,7 +6,7 @@ include('sv_header.php');
 include('../inc/database.php');
 
 //SQL statement
-$sql="SELECT * FROM student WHERE u_id='$user_id'";
+$sql="SELECT * FROM student";
 
 //Query
 $query=$conn->query($sql);
@@ -16,7 +16,7 @@ $query=$conn->query($sql);
     <br>
     <h2>Student Info <a href="student_form.php" class="btn btn-primary btn-sm">Add</a></h2>
 
-    <table class="table table-dark table-striped">
+    <table class="table table-light table-striped">
         <thead>
             <tr>
                 <th>No</th>

@@ -59,34 +59,35 @@
                 <img src="./assets/hero-img.png" class="img-fluid" alt="Software Development" style="width:400px;">
             </div>
             </div>
+
             <div class="row cards">
 
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Flexibility</h5>
-                    <p class="card-text">Gives both students and lecturers complete flexibility in creating and answering quizzes.</p>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Flexibility</h5>
+                        <p class="card-text">Gives both students and lecturers complete flexibility in creating and answering quizzes.</p>
+                    </div>
+                    </div>
                 </div>
-                </div>
-            </div>
 
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Performance</h5>
-                    <p class="card-text">Lightweight, and extremely fast for older PC or mobile phones, so every users can have blazing fast access on the system.</p>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Performance</h5>
+                        <p class="card-text">Lightweight, and extremely fast for older PC or mobile phones, so every users can have blazing fast access on the system.</p>
+                    </div>
+                    </div>
                 </div>
-                </div>
-            </div>
 
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Security</h5>
-                    <p class="card-text">Good security applied, so plagiarism will not happen often on the system.</p>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Security</h5>
+                        <p class="card-text">Good security applied, so plagiarism will not happen often on the system.</p>
+                    </div>
+                    </div>
                 </div>
-                </div>
-            </div>
 
             </div>
         </div>

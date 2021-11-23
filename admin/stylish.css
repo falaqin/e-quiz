@@ -1,0 +1,18 @@
+.card {
+    box-shadow: 11px 7px 16px #10002B;
+    border: 0;
+    text-align: center;
+    
+}
+
+.card-coolors1 {
+    background: linear-gradient(to right, #D0D1FF, #C8E7FF);
+}
+
+.card-coolors2 {
+    background: linear-gradient(to right, #C8E7FF, #C0FDFF);
+}
+
+.card-coolors3 {
+    background: linear-gradient(to right, #D0D1FF, #DEAAFF);
+}

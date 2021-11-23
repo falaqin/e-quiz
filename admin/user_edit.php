@@ -37,7 +37,7 @@ if(isset($_POST['save']))
     if($conn->query($sql))
     {
         //redirect to userphp page
-        header("Location:user.php");
+        header("Location:user_info.php");
     }
     else
     {
@@ -50,7 +50,7 @@ if(isset($_POST['save']))
 <div class="container bg-gradient text-light">
     <br>
     <h2>
-        User Form <a href="user.php" class="btn btn-sm btn-secondary">Back</a>
+        User Form <a href="index.php" class="btn btn-sm btn-secondary">Back</a>
     </h2>
 
     <form method="post" action="">

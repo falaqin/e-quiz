@@ -2,21 +2,28 @@
 include('sv_header.php');
 include("../inc/database.php");
 
+//get quiz id
+$p=$_POST;
+$title=$p['title'];
+$points=$p['points'];
 $id=$_GET['id'];
 
 //sql statement for quiz_list table
-$sql="SELECT * FROM quiz_list WHERE quiz_id='$id'";
+$sql="SELECT * FROM quiz_list WHERE id='$id'";
 
 $query=$conn->query($sql);
 
 $res=mysqli_fetch_assoc($query);
 
 if(isset($_POST['save'])) {
-    $p = $_POST;
-    $title = $p['title'];
-    $point = $p['point'];
+    $p=$_POST;
+    $title=$p['title'];
+    $points=$p['points'];
+    $id=$_GET['id'];
 
-    $sql = "UPDATE quiz_list SET quiz_title='$title', quiz_points='$point' WHERE quiz_id = '$id'";
+    $sql = "UPDATE quiz_list 
+    SET title='$title', points='$points' 
+    WHERE id = '$id'";
     if($conn->query($sql)) {
         header("Location:quiz_list.php");
     }
@@ -32,10 +39,10 @@ if(isset($_POST['save'])) {
     <form action="" method="post">
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" name="title" id="" class="form-control" value="<?php echo $res['quiz_title'] ?>">
+            <input type="text" name="title" id="" class="form-control" value="<?php echo $res['title'] ?>">
 
-            <label for="point">Points</label>
-            <input type="text" name="point" class="form-control" value="<?php echo $res['quiz_points'] ?>">
+            <label for="points">Points per question</label>
+            <input type="number" name="points" min="1" max="10" class="form-control" value="<?php echo $res['points'] ?>">
         </div>
 
         <div>

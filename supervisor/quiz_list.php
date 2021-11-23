@@ -6,7 +6,7 @@ include('sv_header.php');
 include('../inc/database.php');
 
 //sql
-$sql = "SELECT * FROM `quiz_list` ORDER BY quiz_id;";
+$sql = "SELECT * FROM quiz_list WHERE u_id = $user_id ORDER BY title ASC";
 
 //query
 $query=$conn->query($sql);
@@ -29,7 +29,8 @@ $query=$conn->query($sql);
                 <th>No</th>
                 <th>Title</th>
                 <th>Amount of Questions</th>
-                <th>Config</th>
+                <th>Lecturer </th>
+                <th>Configuration</th>
             </tr>
         </thead>
         <tbody>
@@ -40,11 +41,20 @@ $query=$conn->query($sql);
             ?>
             <tr>
                 <td><?php echo $no ?></td>
-                <td><?php echo $row['quiz_title'] ?></td>
-                <td><?php echo 'Placeholder' ?></td>
+                <td><?php echo $row['title'] ?></td>
+                <td>Test</td>
                 <td>
-                    <a href="quiz_manage.php?id=<?php echo $row['quiz_id'] ?>">Manage</a>
-                    <a href="quiz_edit.php?id=<?php echo $row['quiz_id'] ?>">Edit</a>
+                <?php 
+                    $userid = $row['u_id'];
+                    $sql_name = 'SELECT user_name FROM user WHERE u_id=' . $userid . '';
+                    $query_name=$conn->query($sql_name);
+                    $row_name = mysqli_fetch_assoc($query_name);
+                    echo $row_name['user_name'];
+                    ?>
+                </td>
+                <td>
+                    <a href="quiz_manage.php?id=<?php echo $row['id'] ?>">Manage</a>
+                    <a href="quiz_edit.php?id=<?php echo $row['id'] ?>">Edit</a>
                 </td>
             </tr>
 

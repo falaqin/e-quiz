@@ -10,17 +10,11 @@ $sql="SELECT * FROM student ORDER BY std_name ASC";
 
 //run query
 $query=$conn->query($sql);
-
-//sql statement for supervisor
-$sql_supervisor="SELECT * FROM user ORDER BY user_name ASC";
-
-//run supervisor query
-$query_supervisor=$conn->query($sql_supervisor);
 ?>
 
 <div class="container text-light">
     <br>
-    <h2>Student Info</h2>
+    <h2>Student Info <a href="std_form.php" class="btn btn-sm btn-primary">Add Student</a></h2>
 
     <table class="table table-dark table-striped">
         <thead>
@@ -29,7 +23,7 @@ $query_supervisor=$conn->query($sql_supervisor);
                 <th>Name</th>
                 <th>Matric No.</th>
                 <th>Session</th>
-                <th>Supervisor</th>
+                <th>Configuration</th>
             </tr>
         </thead>
 
@@ -47,7 +41,10 @@ $query_supervisor=$conn->query($sql_supervisor);
                 <td><?php echo $row['std_name'] ?></td>
                 <td><?php echo $row['std_matric'] ?></td>
                 <td><?php echo $row['std_session'] ?></td>
-                <td><?php echo $row['u_id'] ?></td>
+                <td>
+                    <a href="std_edit.php?id=<?php echo $row['std_id'] ?>">Edit</a>
+                    <a href="javascript:void(0)" onclick="delete_data('std_delete.php?id=<?php echo $row['std_id']?>')">Delete</a>
+                </td>
             </tr>
 
             <?php
