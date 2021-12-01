@@ -7,7 +7,9 @@ $test = '<div class="form-group">
 <input type="text" name="name" id="" class="form-control" required>
 </div>';
 
-
+$sql = "SELECT * FROM question WHERE id = '25'";
+$res = mysqli_query($conn,  $sql);
+$images = mysqli_fetch_assoc($res);
 if (isset($_POST['save'])) {
     $namearray = array();
     array_push($namearray ,$_POST['name']);
@@ -58,5 +60,20 @@ if (isset($_POST['save'])) {
         </div>
     </div>
 </div>
+
+<div class="container">
+    <select class="states form-control" name="states[]" multiple="multiple">
+        <option value="">Select Here Bro</option>
+        <option value="">It's here Bro</option>
+        <option value="">Damn this MF try so hard</option>
+        <option value="">To get select2 working :skull:</option>
+    </select>
+</div>
+
+<script>
+    $(document).ready(function() {
+    $('.states').select2();
+});
+</script>
 
 <?php include("admin_footer.php") ?>

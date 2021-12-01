@@ -1,5 +1,6 @@
 <?php
-include('sv_header.php');
+//Import header file
+include('lecturer_header.php');
 include("../inc/database.php");
 
 //get quiz id
@@ -19,10 +20,12 @@ if(isset($_POST['save'])) {
     $p=$_POST;
     $title=$p['title'];
     $points=$p['points'];
+    $status=$p['active'];
+    $pass=$p['pass'];
     $id=$_GET['id'];
 
     $sql = "UPDATE quiz_list 
-    SET title='$title', points='$points' 
+    SET title='$title', points='$points', is_active='$status', quiz_pw='$pass'
     WHERE id = '$id'";
     if($conn->query($sql)) {
         header("Location:quiz_list.php");
@@ -42,7 +45,17 @@ if(isset($_POST['save'])) {
             <input type="text" name="title" id="" class="form-control" value="<?php echo $res['title'] ?>">
 
             <label for="points">Points per question</label>
-            <input type="number" name="points" min="1" max="10" class="form-control" value="<?php echo $res['points'] ?>">
+            <input type="number" name="points" class="form-control" value="<?php echo $res['points'] ?>">
+
+            <label for="active">Quiz Status</label>
+            <select name="active" id="active" class="form-control" required>
+                <option value="" selected="" disabled="">Select Here</option>
+                <option value="0">Inactive</option>
+                <option value="1">Active</option>
+            </select>
+
+            <label for="pass">Unique Key (for students to enter)</label>
+            <input type="text" name="pass" class="form-control">
         </div>
 
         <div>
@@ -56,3 +69,7 @@ if(isset($_POST['save'])) {
         padding-bottom: 15px;
     }
 </style>
+
+<?php
+include('lecturer_footer.php');
+?>

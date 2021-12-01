@@ -5,69 +5,109 @@ include('admin_header.php');
 //Import database connection
 include('../inc/database.php');
 
-//if button save clicked
-if(isset($_POST['save']))
-{
-    //Receive data from input form
-    $p=$_POST;
-    $password=md5($p['password']);
-    $username=$p['username'];
-    $name=$p['name'];
-    $matrix_no=$p['matric'];
-    $session=$p['session'];
-    //$u_id=$user_id; //from session $_SESSION['user_id']
+//for looping
+$loopinput = '<div class="card text-dark col-md-4 d-flex" style="width: 30rem;">
+<div class="card-body">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name[]" id="" class="form-control" required>
+    </div>
 
-    //SQL statement
-    $sql="INSERT INTO student(std_username,std_password,std_name,std_matric,std_session)
-            VALUES('$username','$password','$name','$matrix_no','$session')";
+    <div class="form-group">
+        <label for="matrix">Matrics Number</label>
+        <input type="text" name="matrix[]" id="" class="form-control" required>
+    </div>
 
-    //Check and run query
-    if($conn->query($sql))
-    {
-        //Redirect to home page
-        header("Location:student_info.php");
-    }
-    else
-    {
-        //if there has any error
-        die('SQL report error '.$conn->error);
-    }
-}
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username[]" id="" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password[]" id="" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="session">Session</label>
+        <input type="text" name="session[]" id="" class="form-control" required>
+    </div>
+</div>
+</div>
+<br>';
 ?>
 
 <div class="container bg-gradient text-light">
     <br>
-    <h2>Student Form</h2>
+    <h2>
+        Student Form <a href="#addmore" data-bs-toggle="modal" class="btn btn-sm btn-info">Add More</a>
+    </h2>
 
-    <form method="post" action="">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" class="form-control" required>
+    <div class="container text-light row">
+        <form method="post" action="add_std.php" style="width: 500px;">
+            <div class="card text-dark col-md-4 d-flex" style="width: 30rem;">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name[]" id="" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="matrix">Matrics Number</label>
+                        <input type="text" name="matrix[]" id="" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username[]" id="" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password[]" id="" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="session">Session</label>
+                        <input type="text" name="session[]" id="" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <?php if(isset($_POST['test'])) {
+                for ($i=0; $i < $_POST['amountuser'] - 1 ; $i++) { 
+                    echo $loopinput;
+                }
+            } ?>
+            <div class="card text-dark">
+                <div class="card-body">
+                    <a href="user_info.php" class="btn btn-secondary">Back</a>
+                    <input type="submit" name="save" id="" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="addmore" aria-labelledby="exampleModalLabel" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add more students</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="post">
+                <div class="modal-body">
+                    <label for="amountuser">Enter amount of students</label>
+                    <input type="number" name="amountuser" class="form-control" value="1" min="1" max="100">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" name="test" class="btn btn-success">
+                </div>
+            </form>
         </div>
-
-        <div class="form-group">
-            <label for="matrix">Matrix No.</label>
-            <input type="text" name="matric" class="form-control" required>
-        </div>
-
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" required>
-        </div>
-
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" required>
-        </div>
-
-        <div class="form-group">
-            <label for="session">Session</label>
-            <input type="text" name="session" class="form-control" required>
-        </div>
-
-        <input type="submit" name="save" value="Save" class="btn btn-primary">
-    </form>
-
+    </div>
 </div>
 
 <style>

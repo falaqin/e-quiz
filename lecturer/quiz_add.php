@@ -1,5 +1,6 @@
 <?php
-include("sv_header.php");
+//Import header file
+include('lecturer_header.php');
 include("../inc/database.php");
 
 //get quiz id
@@ -72,5 +73,5 @@ $res=mysqli_fetch_assoc($query);
 </style>
 
 <?php
-include("sv_footer.php")
+include("lecturer_footer.php")
 ?>

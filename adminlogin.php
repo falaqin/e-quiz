@@ -50,9 +50,9 @@ session_start();
             {
                 header("Location:admin");
             }
-            else if ($access==2) //supervisor
+            else if ($access==2) //lecturer
             {
-                header("Location:supervisor");
+                header("Location:lecturer");
             }
         }
         else //no data

@@ -1,6 +1,6 @@
 <?php
 //Import header file
-include('sv_header.php');
+include('lecturer_header.php');
 
 //Import database connection
 include('../inc/database.php');
@@ -92,5 +92,5 @@ if(isset($_POST['save']))
 
 <?php
 //Import footer file
-include('sv_footer.php');
+include('lecturer_footer.php');
 ?>

@@ -18,7 +18,7 @@ $sql="SELECT * FROM user WHERE u_id = " . $_SESSION['user_id'] . " ";
 $query=$conn->query($sql);
 
 //add variable for query to call
-$call=mysqli_fetch_assoc($query)
+$call=mysqli_fetch_assoc($query);
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +28,13 @@ $call=mysqli_fetch_assoc($query)
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="stylish.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/bootstrap-switch/bootstrap-switch.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.2.0/dist/select2-bootstrap-5-theme.min.css" />
+        <script src="../assets/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>        
+        
         <script>
         function delete_data(url)
         {
@@ -45,10 +49,6 @@ $call=mysqli_fetch_assoc($query)
             }
         }
         </script>
-        <script src = "assets/js/bootstrap.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     </head>
     
     <style>
@@ -73,32 +73,45 @@ $call=mysqli_fetch_assoc($query)
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Users
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                                <a class="dropdown-item" href="user_info.php">User Info</a>
+                                <a class="dropdown-item" href="user_form.php">Add New User</a>
+                            </li>
+                        </ul> 
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Students
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                                <a class="dropdown-item" href="student_info.php">Students Info</a>
+                                <a class="dropdown-item" href="std_form.php">Add new Student</a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item active">
-                        <a class="nav-link" href="user_info.php">User Info</a>
-                    </li>
-
-                    <li>
-                        <a class="nav-link" href="student_info.php">Students Info</a>
-                    </li>
-
-                    <li>
                         <a class="nav-link" href="quiz.php">Quiz List</a>
                     </li>
 
-                    <li>
+                    <li class="nav-item active">
                         <a class="nav-link" href="">Reports</a>
                     </li>
-
-                    <li>
-                        <a class="nav-link" href="admin_debug.php">debug</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Logout</a>
-                    </li>
                 </ul>
+
                 <span class="navbar-text">
-                    <?php echo "Welcome, ".$call['user_name'] ?>
+                    <?php echo "Welcome, ".$call['user_name']. "." ?>
+                </span>
+                
+                <span class="navbar-text">
+                    <a class="nav-link" style="color: #0B3142;" href="logout.php">Logout</a>
                 </span>
             </div>
         </div>

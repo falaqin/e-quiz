@@ -1,6 +1,6 @@
 <?php
 //header
-include('sv_header.php');
+include('lecturer_header.php');
 
 //db con
 include('../inc/database.php');
@@ -69,4 +69,4 @@ $query=$conn->query($sql);
     </table>
 </div>
 
-<?php include("sv_footer.php") ?>
+<?php include("lecturer_footer.php") ?>
