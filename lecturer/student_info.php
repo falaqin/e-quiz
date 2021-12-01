@@ -39,7 +39,7 @@ $query2=$conn->query($sql2);
 		</div>
 
 		<div class="card text-dark" style="width: 500px;">
-			<form action="./script/import.php" method="post" enctype="multipart/form-data" style="width: 500px;">
+			<form action="import.php" method="post" enctype="multipart/form-data" style="width: 500px;">
 				<div class="card-header">
 					Import Users with CSV
 				</div>

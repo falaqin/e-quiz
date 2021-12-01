@@ -12,7 +12,7 @@ $sql="DELETE FROM student WHERE std_id='$id'";
 if($conn->query($sql))
 {
     //redirect to home page
-    header("Location:index.php");
+    header("Location:student_info.php");
 }
 else
 {

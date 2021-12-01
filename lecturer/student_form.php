@@ -44,7 +44,7 @@ $loopinput = '<div class="card text-dark col-md-4 d-flex" style="width: 30rem;">
     </h2>
 
     <div class="container text-light row">
-        <form method="post" action="add_std.php" style="width: 500px;">
+        <form method="post" action="student_add.php" style="width: 500px;">
             <div class="card text-dark col-md-4 d-flex" style="width: 30rem;">
                 <div class="card-body">
                     <div class="form-group">
@@ -81,7 +81,7 @@ $loopinput = '<div class="card text-dark col-md-4 d-flex" style="width: 30rem;">
             } ?>
             <div class="card text-dark">
                 <div class="card-body">
-                    <a href="user_info.php" class="btn btn-secondary">Back</a>
+                    <a href="student_info.php" class="btn btn-secondary">Back</a>
                     <input type="submit" name="save" id="" class="btn btn-primary">
                 </div>
             </div>
