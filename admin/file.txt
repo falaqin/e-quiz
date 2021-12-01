@@ -1,9 +1,9 @@
 3b0ecf3552d6a6cd34a0f919b67b4c4d
 
--upload file menggunakan excel
--loop tetap kena menaip
--drop down menu
--tambah satu lg menu utk setting timer (quiz
--shuffle
+-upload file menggunakan excel (siap)
+-loop tetap kena menaip (siap)
+-drop down menu (siap) 
+-tambah satu lg menu utk setting timer quiz
+-shuffle quiz
 -enable quiz or disable based on quiz's status
--pagination mysql
+-pagination mysql (LIMIT 0,2) (siap)
