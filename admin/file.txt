@@ -6,4 +6,4 @@
 -tambah satu lg menu utk setting timer quiz
 -shuffle quiz
 -enable quiz or disable based on quiz's status
--pagination mysql (LIMIT 0,2) (siap)
+-pagination mysql (LIMIT 0,2) (sudah siap)
