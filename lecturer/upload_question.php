@@ -26,8 +26,9 @@ if ($isc4 != 1) {
     $isc4 = 0;
 }   
 
-/* echo $quizid . " " . $questiontxt . " " . "<br>";
-echo $answer1." ".$isc1." ".$answer2." ".$isc2." ".$answer3." ".$isc3." ".$answer4." ".$isc4;  */
+echo $quizid . " " . $questiontxt . " " . "<br>";
+echo $answer1." ".$isc1." ".$answer2." ".$isc2." ".$answer3." ".$isc3." ".$answer4." ".$isc4 . " "; 
+echo $isc1 . $isc2 . $isc3 . $isc4;
 
 //for question image
 //$pname = rand(1000,10000)."-".$_FILES["image"]["name"];

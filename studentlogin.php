@@ -47,7 +47,7 @@ session_start();
         else //no data
         {
             //set message to loginerror
-            $login_error='<div style="color:red;">Invalid User and Password </div>';
+            $login_error='<div style="color:red;">Invalid Username or Password </div>';
         }
     }
     ?>

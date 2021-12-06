@@ -131,7 +131,7 @@ $querystudent = $conn->query($sqlstudent);
             <form action="upload_question.php" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <label>Question</label>
-                    <textarea class="form-control" name="question" cols="30" rows="5"></textarea>
+                    <textarea class="form-control" name="question" cols="30" rows="5" required></textarea>
                     <br>
 
                     <label>Picture for Question (optional)</label>
@@ -141,26 +141,26 @@ $querystudent = $conn->query($sqlstudent);
                     <input type="hidden" value="<?php echo $id ?>" name="quizid">
 
                     <label>Answer: A</label>
-                    <input type="text" name="answer1" class="form-control">
-                    <input type="radio" name="iscorrect[]" value="1">
+                    <input type="text" name="answer1" class="form-control" required>
+                    <input type="radio" name="iscorrect[0]" value="1">
                     <label for="iscorrect">Tick if correct answer.</label>
                     <br><br>
 
                     <label>Answer: B</label>
-                    <input type="text" name="answer2" class="form-control">
-                    <input type="radio" name="iscorrect[]" value="1">
+                    <input type="text" name="answer2" class="form-control" required>
+                    <input type="radio" name="iscorrect[1]" value="1">
                     <label for="iscorrect">Tick if correct answer.</label>
                     <br><br>
 
                     <label>Answer: C</label>
-                    <input type="text" name="answer3" class="form-control">
-                    <input type="radio" name="iscorrect[]" value="1">
+                    <input type="text" name="answer3" class="form-control" required>
+                    <input type="radio" name="iscorrect[2]" value="1">
                     <label for="iscorrect">Tick if correct answer.</label>
                     <br><br>
                         
                     <label>Answer: D</label>
-                    <input type="text" name="answer4" class="form-control">
-                    <input type="radio" name="iscorrect[]" value="1">
+                    <input type="text" name="answer4" class="form-control" required>
+                    <input type="radio" name="iscorrect[3]" value="1">
                     <label for="iscorrect">Tick if correct answer.</label>
 
                 </div>
@@ -184,7 +184,7 @@ $querystudent = $conn->query($sqlstudent);
 			<form action="quiz_add_student.php" method="post">
 				<div class="modal-body">
 					<label for="students">Select students here:</label> <br>
-					<select class="form-control std" multiple="multiple" name="students[]" style="width: 100%">
+					<select class="form-control std" multiple="multiple" name="students[]" style="width: 100%" required>
 						<option value="" disabled>Select Here</option>
 					<?php 
 						$student = $conn->query('SELECT * FROM student ORDER BY std_matric ASC');
@@ -197,7 +197,6 @@ $querystudent = $conn->query($sqlstudent);
 					<input type="hidden" name="idQuiz" value="<?php echo $id ?>">
 				</div>
 				<div class="modal-footer">
-					<button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 					<input type="submit" class="btn btn-primary" name="addstudent" value="Add Student">
 				</div>
 			</form>
@@ -205,7 +204,12 @@ $querystudent = $conn->query($sqlstudent);
 	</div>
 </div>
 
-
+<script>
+    $("input[type=radio]").on("click", function() {
+        $("input[type=radio]").prop("checked", false);
+        $(this).prop("checked", true);
+      });
+</script>
 
 <?php
 include ("lecturer_footer.php");
