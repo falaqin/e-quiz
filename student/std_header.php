@@ -5,7 +5,7 @@ session_start();
 include('../inc/database.php');
 
 //if session not found
-if(!isset($_SESSION['student_id']))
+if(!isset($_SESSION['student_id']))     
 {
     header("Location:../studentlogin.php");
 }
@@ -24,17 +24,16 @@ $query=$conn->query($sql);
     <head>
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="stylish.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.2.0/dist/select2-bootstrap-5-theme.min.css" />
         <script src="../assets/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>        
     </head>
 
     <body>
-        
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">
@@ -63,6 +62,7 @@ $query=$conn->query($sql);
                         <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"><?php
                             if ($call=mysqli_fetch_assoc($query)) {
                                 echo "Welcome, ".$call['std_name'].".";
+                                $classID = $call['class_id'];
                             }
                             ?>
                         </a>

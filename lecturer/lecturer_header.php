@@ -34,6 +34,7 @@ $call=mysqli_fetch_assoc($query);
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="stylish.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.2.0/dist/select2-bootstrap-5-theme.min.css" />
         <script src="../assets/jquery-3.4.1.min.js"></script>
@@ -81,6 +82,18 @@ $call=mysqli_fetch_assoc($query);
                             <li>
                                 <a class="dropdown-item" href="student_info.php">Students Info</a>
                                 <a class="dropdown-item" href="student_form.php">Add new Student</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Class
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                                <a class="dropdown-item" href="class_info.php">Classes Info</a>
+                                <a class="dropdown-item" href="class_form.php">Add new Class</a>
                             </li>
                         </ul>
                     </li>

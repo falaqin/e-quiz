@@ -13,17 +13,101 @@ $point = $callPoint['points'];
 $QuestionSQL = "SELECT q.id, q.question, q.question_img FROM question q WHERE q.quiz_id = $quizID";
 $queryQuestion = $conn->query($QuestionSQL);
 
-echo $_POST['answer77'][0];
+$answerForDB = array();
+$num = 0;
 
-/* while ($callQuestion = mysqli_fetch_assoc($queryQuestion)) {
-    $questionID = $callQuestion['id'];
-
-    $OptionSQL = "SELECT qo.id, qo.question_id, qo.option_text, qo.option_img, qo.is_right FROM question_option qo WHERE qo.question_id = $questionID";
-    $queryOption = $conn->query($OptionSQL);
-    $total = 0;
-    while ($callAnswer = mysqli_fetch_assoc($queryOption)) {
-        $result = $_POST['answer'];
+while ($callQID = mysqli_fetch_assoc($queryQuestion)) {
+    $answer = $_POST["answer" . $callQID['id']][0];
+    if ($answer == '0') {
+        $incorrect++;
+        $actualMark += $point;
+    } elseif ($answer == '1') {
+        $correct++;
+        $rightanswer = $answer * $point;
+        $total += $rightanswer;
+        $actualMark += $point;
+    } elseif ($answer == '') {
+        $unanswered++;
+        $actualMark += $point;
+        $answer = 0;
     }
-} */
+    $answerForDB[$num] = $answer;
+    $num++;
+}
+
+if ($total == '') {
+    $total = 0;
+}
+
+$questionID = $_POST['question_id'];
+
+for ($i=0; $i < count($questionID); $i++) { 
+    $QueryFor_stdAnswer = "INSERT INTO student_answer (std_id, quiz_id, question_id, is_right)
+    VALUES ('$SQLstd_id','$quizID','$questionID[$i]','$answerForDB[$i]')";
+
+    $RunQuery_stdAnswer = mysqli_query($conn, $QueryFor_stdAnswer);
+} if ($RunQuery_stdAnswer) {
+    $QueryFor_stdScore = "UPDATE student_score (quiz_id, std_id, std_points, total_points)
+    SET std_points = '$total', total_points = '$actualMark'
+    WHERE quiz_id = $quizID
+    AND std_id = $SQLstd_id";
+
+    $RunQuery_stdScore = mysqli_query($conn, $QueryFor_stdScore);
+    echo '<script> alert("Your answers have been submitted."); </script>';
+}
+
+?>
+
+<canvas id="resultChart" style="width:100%;max-width:900px" class="center"></canvas>
+
+<div class="container">
+    <h1>You have scored <?php echo $total ?> out of <?php echo $actualMark ?></h1>
+</div>
+
+<script>
+    var xValues = ["Correct", "Incorrect", "Unanswered"];
+    var yValues = [<?php echo $correct ?>, <?php echo $incorrect ?>, <?php echo $unanswered ?>];
+    var barColors = [
+        "#1e7145",
+        "#b91d47",
+        "#202124"
+    ];
+
+    new Chart("resultChart", {
+    type: "doughnut",
+    data: {
+        labels: xValues,
+        datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+        }]
+    },
+    options: {
+        title: {
+        display: true,
+        text: "Quiz Result"
+        }
+    }
+    });
+
+
+</script>
+
+<style>
+    .card {
+        box-shadow: 3px 5px 7px #0B090A;
+        border: 0;   
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+</style>
+
+<?php 
+include('std_footer.php');
 
 ?>

@@ -1,14 +1,14 @@
 <?php
 include("../inc/database.php");
 
-$TS = count($_POST['students']);
+$TS = count($_POST['class']);
 $quizID = $_POST['idQuiz'];
 
 
 for ($i=0; $i <= $TS; $i++) { 
-    $idForStudents = $_POST['students'][$i]." ";
+    $idClass = $_POST['class'][$i]." ";
 
-    $sql_AddQuiz = "INSERT INTO student_quiz (quiz_id, std_id) VALUES ('$quizID','$idForStudents')";
+    $sql_AddQuiz = "INSERT INTO student_quiz (quiz_id, class_id) VALUES ('$quizID','$idClass')";
     if ($conn->query($sql_AddQuiz)) {
         echo "it works";
     }

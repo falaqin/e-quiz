@@ -12,8 +12,8 @@ $row = mysqli_fetch_assoc($query);
 $sqlquestion = "SELECT * FROM question WHERE quiz_id = $id ORDER BY date_updated ASC";
 $queryquestion = $conn->query($sqlquestion);
 
-$sqlstudent = "SELECT * FROM student_quiz sq INNER JOIN student s WHERE sq.std_id = s.std_id AND sq.quiz_id = $id ORDER BY sq.date_updated ASC";
-$querystudent = $conn->query($sqlstudent);
+$sqlclass = "SELECT * FROM student_quiz sq INNER JOIN class c WHERE sq.class_id = c.class_id AND sq.quiz_id = $id ORDER BY sq.date_updated ASC";
+$queryclass = $conn->query($sqlclass);
 ?>
 <script>
     function matchCustom(params, data) {
@@ -55,7 +55,7 @@ $querystudent = $conn->query($sqlstudent);
     <br>
     <h2>Title: <?php echo $row['title'] ?> <a href="quiz_list.php" class="btn btn-sm btn-secondary">Back</a></h2>
     <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addquestion">Add Question</button>
-	<button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addstd">Add Students</button>   
+	<button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addstd">Add Class</button>   
     <br>
     <br>
     <div class="text-dark">
@@ -69,7 +69,7 @@ $querystudent = $conn->query($sqlstudent);
 						?>
                         <li class="list-group-item"> <?php echo $questionrow['question'] ?> <br> <br>
                             <center>
-                                <button class="btn btn-sm btn-outline-primary" data-id="" type="button" disabled><b>Edit</b></button>
+                                <a href="quiz_question_edit.php?question_id=<?php echo $questionrow['id'] ?>&id=<?php echo $_GET['id'] ?>" class="btn btn-sm btn-outline-primary"><b>Edit</b></a>
                                 <a href="javascript:void(0)" onclick="delete_data('quiz_question_delete.php?questionid=<?php echo $questionrow['id'] ?>&quiz_id=<?php echo $id ?>')" class="btn btn-sm btn-outline-danger"><b>Delete</b></a>
                             </center>
                         </li>
@@ -81,13 +81,13 @@ $querystudent = $conn->query($sqlstudent);
 			<div class="card col-sm-6">
 				<div class="card-body">
 					<ul class="list-group">
-						<h5 class="card-title">Students</h5>
+						<h5 class="card-title">Class</h5>
 						<?php
-                        while ($studentrow = mysqli_fetch_assoc($querystudent)):
+                        while ($classrow = mysqli_fetch_assoc($queryclass)):
                         ?>
-						<li class="list-group-item"> <?php echo $studentrow['std_name']; ?>
+						<li class="list-group-item"> <?php echo $classrow['class_section']; ?>
 							<center>
-								<a href="javascript:void(0)" onclick="delete_data('quiz_student_delete.php?std_id=<?php echo $studentrow['std_id'] ?>&quiz_id=<?php echo $id ?>')" class="btn btn-sm btn-outline-danger"><b>Delete</b></a>
+								<a href="javascript:void(0)" onclick="delete_data('quiz_class_delete.php?class_id=<?php echo $classrow['class_id'] ?>&quiz_id=<?php echo $id ?>')" class="btn btn-sm btn-outline-danger"><b>Delete</b></a>
 							</center>
 						</li>
 						<?php
@@ -128,7 +128,7 @@ $querystudent = $conn->query($sqlstudent);
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="upload_question.php" method="post" enctype="multipart/form-data">
+            <form action="quiz_selection_upload.php" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <label>Question</label>
                     <textarea class="form-control" name="question" cols="30" rows="5" required></textarea>
@@ -177,27 +177,27 @@ $querystudent = $conn->query($sqlstudent);
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Add Student</h5>
+				<h5 class="modal-title">Add Class</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 
 			<form action="quiz_add_student.php" method="post">
 				<div class="modal-body">
-					<label for="students">Select students here:</label> <br>
-					<select class="form-control std" multiple="multiple" name="students[]" style="width: 100%" required>
+					<label for="students">Select classes here:</label> <br>
+					<select class="form-control std" multiple="multiple" name="class[]" style="width: 100%" required>
 						<option value="" disabled>Select Here</option>
 					<?php 
-						$student = $conn->query('SELECT * FROM student ORDER BY std_matric ASC');
-						while($result=$student->fetch_assoc()){
+						$class = $conn->query('SELECT * FROM class ORDER BY class_id ASC');
+						while($result=$class->fetch_assoc()){
 						?>	
-						<option value="<?php echo $result['std_id'] ?>"> <?php echo ucwords($result['std_name']).' '.$result['std_matric'] ?> </option>
+						<option value="<?php echo $result['class_id'] ?>"> <?php echo ucwords($result['class_section'])?> </option>
 					<?php } ?>
 					</select>
 
 					<input type="hidden" name="idQuiz" value="<?php echo $id ?>">
 				</div>
 				<div class="modal-footer">
-					<input type="submit" class="btn btn-primary" name="addstudent" value="Add Student">
+					<input type="submit" class="btn btn-primary" name="addstudent" value="Add Class">
 				</div>
 			</form>
 		</div>

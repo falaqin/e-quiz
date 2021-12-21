@@ -6,3 +6,10 @@
 
 </body>
 </html>
+
+<style>
+  body {
+    /* background: linear-gradient(to right, #F5F3F4, #FFFFFF); */
+    background: #F5F3F4;
+    }
+</style>

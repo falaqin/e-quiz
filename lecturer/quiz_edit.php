@@ -49,13 +49,12 @@ if(isset($_POST['save'])) {
 
             <label for="active">Quiz Status</label>
             <select name="active" id="active" class="form-control" required>
-                <option value="" selected="" disabled="">Select Here</option>
                 <option value="0">Inactive</option>
-                <option value="1">Active</option>
+                <option value="1"<?php if($res['is_active']==1) {echo 'selected=selected"';} ?>>Active</option>
             </select>
 
             <label for="pass">Unique Key (for students to enter)</label>
-            <input type="text" name="pass" class="form-control">
+            <input type="text" name="pass" class="form-control" value="<?php echo $res['quiz_pw'] ?>">
         </div>
 
         <div>

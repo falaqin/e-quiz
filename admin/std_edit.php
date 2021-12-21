@@ -9,7 +9,7 @@ $id=$_GET['id'];
 
 //get existing data
 //sql statement to check existing data
-$sql_check="SELECT * FROM student WHERE std_id='$id'";
+$sql_check="SELECT * FROM student s INNER JOIN class c WHERE std_id='$id' AND c.class_id = s.class_id";
 
 //query sql statement
 $query_check=$conn->query($sql_check);
@@ -17,33 +17,16 @@ $query_check=$conn->query($sql_check);
 //get result
 $rslt=mysqli_fetch_assoc($query_check);
 
-//update process
-//if button click save
-if(isset($_POST['save']))
-{
-    //receive data from input
-    $p=$_POST;
-    $name = $p['name'];
-    $username=$p['username'];
-    $matric = $p['matric'];
-    $session = $p['session'];
-
-    //sql statement
-    $sql="UPDATE student
-    SET std_username='$username', std_name='$name', std_session='$session'
-    WHERE std_id='$id'";
-    //if query no error
-    if($conn->query($sql))
-    {
-        //redirect to userphp page
-        header("Location:student_info.php");
-    }
-    else
-    {
-        //if error
-        die("SQL error report ".$conn->error);
-    }
+$class = $conn->query("SELECT * FROM class ORDER BY class_id");
+$allClassSection = array();
+$allClassID = array();
+$i = 0;
+while ($result=$class->fetch_assoc()) {
+    $allClassID[$i] = $result['class_id'];
+    $allClassSection[$i] = $result['class_section'];
+    $i++;
 }
+
 ?>
 
 <div class="container bg-gradient text-light">
@@ -52,7 +35,12 @@ if(isset($_POST['save']))
         Student Form <a href="student_info.php" class="btn btn-sm btn-secondary">Back</a>
     </h2>
 
-    <form method="post" action="">
+    <form method="post" action="std_edit_submit.php">
+        <div class="form-group">
+            <input type="hidden" name="stdid" value="<?php echo $id ?>">
+        </div>
+
+
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" name="name" id="" class="form-control" value="<?php echo $rslt['std_name'] ?>" required>
@@ -73,11 +61,31 @@ if(isset($_POST['save']))
             <input type="text" name="session" class="form-control" value="<?php echo $rslt['std_session'] ?>">
         </div>
 
+        <div class="form-group">
+            <label for="class">Class</label>
+            <select class="form-control class-select" name="class" required>
+                <option value="<?php echo $rslt['class_id'] ?>" selected><?php echo $rslt['class_section'] ?></option>
+                <?php for ($n=0; $n < count($allClassID) ; $n++) { 
+                    if ($rslt['class_id'] <> $allClassID[$n]) { ?>
+                        <option value="<?php echo $allClassID[$n] ?>">
+                        <?php echo $allClassSection[$n] ?>
+                        </option>
+                    <?php } ?>
+                <?php } ?>
+            </select>
+        </div>
+
         <div>
             <input type="submit" name="save" id="" class="btn btn-primary">
         </div>
     </form>
 </div>
+
+<script>
+    $(".class-select").select2({
+    //width: 'responsive' // need to override the changed default
+});
+</script>
 
 <style>
     .form-group {

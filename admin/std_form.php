@@ -5,47 +5,26 @@ include('admin_header.php');
 //Import database connection
 include('../inc/database.php');
 
-//for looping
-$loopinput = '<div class="card text-dark col-md-4 d-flex" style="width: 30rem;">
-<div class="card-body">
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" name="name[]" id="" class="form-control" required>
-    </div>
-
-    <div class="form-group">
-        <label for="matrix">Matrics Number</label>
-        <input type="text" name="matrix[]" id="" class="form-control" required>
-    </div>
-
-    <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" name="username[]" id="" class="form-control" required>
-    </div>
-
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password[]" id="" class="form-control" required>
-    </div>
-
-    <div class="form-group">
-        <label for="session">Session</label>
-        <input type="text" name="session[]" id="" class="form-control" required>
-    </div>
-</div>
-</div>
-<br>';
+$class = $conn->query("SELECT * FROM class ORDER BY class_id");
+$allClassSection = array();
+$allClassID = array();
+$i = 0;
+while ($result=$class->fetch_assoc()) {
+    $allClassID[$i] = $result['class_id'];
+    $allClassSection[$i] = $result['class_section'];
+    $i++;
+}
 ?>
 
 <div class="container bg-gradient text-light">
     <br>
-    <h2>
+    <h2 class="bi bi-file-person">
         Student Form <a href="#addmore" data-bs-toggle="modal" class="btn btn-sm btn-info">Add More</a>
     </h2>
 
-    <div class="container text-light row">
-        <form method="post" action="add_std.php" style="width: 500px;">
-            <div class="card text-dark col-md-4 d-flex" style="width: 30rem;">
+    <div class="container text-light">
+        <form method="post" action="add_std.php">
+            <div class="card text-dark col-md-4 d-flex" style="width: inherit;">
                 <div class="card-body">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -71,14 +50,63 @@ $loopinput = '<div class="card text-dark col-md-4 d-flex" style="width: 30rem;">
                         <label for="session">Session</label>
                         <input type="text" name="session[]" id="" class="form-control" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="class">Class</label>
+                        <select class="form-control class-select" name="class[]" required>
+                            <option value="" disabled selected>Select Here</option>
+                            <?php for ($n=0; $n < count($allClassID) ; $n++) { ?>
+                                <option value="<?php echo $allClassID[$n] ?>"><?php echo $allClassSection[$n] ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
                 </div>
             </div>
             <br>
+            
             <?php if(isset($_POST['test'])) {
-                for ($i=0; $i < $_POST['amountuser'] - 1 ; $i++) { 
-                    echo $loopinput;
-                }
-            } ?>
+                for ($i=0; $i < $_POST['amountuser'] - 1 ; $i++) { ?>
+                    <div class="card text-dark col-md-4 d-flex" style="width: inherit;">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="name[]" id="" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="matrix">Matrics Number</label>
+                                <input type="text" name="matrix[]" id="" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" name="username[]" id="" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" name="password[]" id="" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="session">Session</label>
+                                <input type="text" name="session[]" id="" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="class">Class</label>
+                                <select class="form-control class-select" name="class[]" required>
+                                    <option value="" disabled selected>Select Here</option>
+                                    <?php for ($n=0; $n < count($allClassID) ; $n++) { ?>
+                                        <option value="<?php echo $allClassID[$n] ?>"><?php echo $allClassSection[$n] ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                <?php } ?>
+            <?php } ?>
             <div class="card text-dark">
                 <div class="card-body">
                     <a href="user_info.php" class="btn btn-secondary">Back</a>
@@ -109,6 +137,12 @@ $loopinput = '<div class="card text-dark col-md-4 d-flex" style="width: 30rem;">
         </div>
     </div>
 </div>
+
+<script>
+    $(".class-select").select2({
+    //width: 'responsive' // need to override the changed default
+});
+</script>
 
 <style>
     .form-group

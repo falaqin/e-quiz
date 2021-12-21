@@ -17,51 +17,23 @@ $query_check=$conn->query($sql_check);
 //get result
 $rslt=mysqli_fetch_assoc($query_check);
 
-//update process
-//if button click save
-if(isset($_POST['save']))
-{
-    //receive data from input
-    $p=$_POST;
-    $name=$p['name'];
-    $staff_no=$p['staff_no'];
-    $username=$p['username'];
-    $password=md5($p['password']);
-    $access_level=$p['access_level'];
-
-    //sql statement
-    $sql="UPDATE user
-    SET user_name='$name', user_staffno='$staff_no', u_username='$username', u_password='$password',u_access_lvl='$access_level'
-    WHERE u_id='$id'";
-    //if query no error
-    if($conn->query($sql))
-    {
-        //redirect to userphp page
-        header("Location:user_info.php");
-    }
-    else
-    {
-        //if error
-        die("SQL error report ".$conn->error);
-    }
-}
 ?>
 
 <div class="container bg-gradient text-light">
     <br>
     <h2>
-        User Form <a href="index.php" class="btn btn-sm btn-secondary">Back</a>
+        User Form <a href="user_info.php" class="btn btn-sm btn-secondary">Back</a>
     </h2>
 
-    <form method="post" action="">
+    <form method="post" action="user_edit_submit.php">
+
         <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="" class="form-control" value="<?php echo $rslt['user_name'] ?>" required>
+            <input type="hidden" name="userid" value="<?php echo $id ?>">
         </div>
 
         <div class="form-group">
-            <label for="staff_no">Staff No</label>
-            <input type="text" name="staff_no" id="" class="form-control" value="<?php echo $rslt['user_staffno'] ?>" required>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="" class="form-control" value="<?php echo $rslt['user_name'] ?>" required>
         </div>
 
         <div class="form-group">
@@ -70,20 +42,15 @@ if(isset($_POST['save']))
         </div>
 
         <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="" class="form-control" value="<?php echo $rslt['u_password'] ?>" required>
-        </div>
-
-        <div class="form-group">
             <label for="access_level">Access Level</label>
             <select name="access_level" id="access_level" class="form-control" required>
                 <option value="1">Admin</option>
-                <option value="2" <?php if($rslt['u_access_lvl']==2) {echo ' selected=selected"';} ?> >Supervisor</option>
+                <option value="2" <?php if($rslt['u_access_lvl']==2) {echo ' selected=selected"';} ?> >Lecturer</option>
             </select>
         </div>
 
         <div>
-            <input type="submit" name="save" id="" class="btn btn-primary">
+            <input type="submit" name="save" class="btn btn-primary">
         </div>
     </form>
 </div>

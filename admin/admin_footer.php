@@ -21,6 +21,6 @@
     /* Other Classes for Page Styling */
 
     body {
-    background: linear-gradient(to right, #5A189A, #240046);
+    background: linear-gradient(to right, #4895EF, #3F37C9);
     }
 </style>

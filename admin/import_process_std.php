@@ -1,9 +1,7 @@
 <?php
 //Import database connection
 include('../inc/database.php');
-include('./script/excelreader.php');
 include('admin_header.php');
-
 
 if(isset($_POST["saveimport"])){
 		
@@ -11,11 +9,13 @@ if(isset($_POST["saveimport"])){
 	if($_FILES["file"]["size"] > 0) {
 		  	
 		$file = fopen($filename, "r");
-	    while (($emapData = fgetcsv($file, 10000, ",")) !== FALSE) {
+		fgetcsv($file, 10000, ",");
+	    while (($data = fgetcsv($file, 10000, ",")) !== FALSE) {
 
-	        //It wiil insert a row to our subject table from our csv file`
-	        $sql = "INSERT INTO student(std_username, std_password, std_name,std_matric, std_session) 
-	        	VALUES('$emapData[0]','md5($emapData[1])','$emapData[2]','$emapData[3]','$emapData[4]')";
+	        //It will insert a row to our subject table from our csv file`
+			$md5password = md5($data[5]);
+	        $sql = "INSERT into student (std_name, std_matric, class_id, std_session, std_username, std_password) 
+	        	values('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$md5password')";
 	        //we are using mysql_query function. it returns a resource on true else False on error
 	        $result = mysqli_query($conn, $sql);
 			if(!$result)

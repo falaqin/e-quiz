@@ -4,7 +4,7 @@ include('../inc/database.php');
 if (isset($_POST['submit'])) {
     /* receive data from form */
     $p=$_POST;
-    $title = $p['title'] . " " . $p['class'];
+    $title = $p['title'];
     $point=$p['points'];
     $pw=$p['pw'];
     $id=$p['lecturer'];

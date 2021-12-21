@@ -3,7 +3,7 @@ include('inc/database.php');
 include('std_header.php');
 
 $quizID = $_GET['quizid'];
-$sqlCheck = "SELECT s.std_id, ql.id, ql.title, ql.quiz_pw FROM student s, quiz_list ql, student_quiz sq WHERE s.std_id = $SQLstd_id AND s.std_id = sq.std_id AND ql.id = $quizID AND ql.id = sq.quiz_id";
+$sqlCheck = "SELECT s.std_id, ql.id, ql.title, ql.quiz_pw FROM student s, quiz_list ql, student_quiz sq WHERE s.std_id = $SQLstd_id AND s.class_id = sq.class_id AND ql.id = $quizID AND ql.id = sq.quiz_id";
 $queryCheck = $conn->query($sqlCheck);
 $checkUnique=mysqli_fetch_assoc($queryCheck);
 
@@ -23,8 +23,28 @@ if (isset($_POST['submit'])) {
     <div class="login-box">
         <form action="" method="post">
             <h1><?php echo $checkUnique['title']?></h1>
+            <div class="card">
+                <div class="card-header"><h3 style="color: red;">WARNING</h3></div>
+                <div class="card-body">
+                    <p>
+                        If you navigate to previous page while answering the quiz, you can no longer participate in the test, and your marks will be 0.
+                    </p>
+                </div>
+            </div>
+            <br>
             <div class="form-group">
-                <input type="password" name="key" class="form-control" placeholder="Unique Key" value="">
+                    <?php 
+                        $sqlToCheckAvail = "SELECT sc.std_points FROM student_score sc LEFT JOIN student_quiz sq ON sc.quiz_id = sq.quiz_id WHERE sc.std_id = $SQLstd_id AND sc.quiz_id = $quizID";
+                        $queryAvail = $conn->query($sqlToCheckAvail);
+                        $callAvail = mysqli_fetch_assoc($queryAvail);
+
+                        if ($callAvail['std_points'] == '') { ?>
+                            <input type="password" name="key" class="form-control" placeholder="Unique Key" value="">
+                        <?php } else { ?>
+                            <input type="password" name="key" class="form-control" placeholder="You have answered the quiz." value="" disabled>
+                        <?php }
+                    ?>
+                
                 <span class="error"><?php echo $result ?></span><br>
                 <input type="hidden" name="quizid" value="<?php $quizID ?>">
             </div>
