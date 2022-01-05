@@ -145,6 +145,8 @@ if ($RunQuery_stdAnswer) {
     echo '<script> alert("Your answers have been submitted."); </script>';
 }
 
+
+
 ?>
 
 <canvas id="resultChart" style="width:100%;max-width:900px" class="center"></canvas>

@@ -171,7 +171,9 @@ $query2=$conn->query($sql2);
 
             </tbody>
         </table>
-        <nav>
+
+    </div>
+    <nav>
             <ul class="pagination">
                 <li class="page-item <?php if ($_GET['page'] <= 1) { echo "disabled"; } ?>">
                     <a class="page-link" href="?page=<?php echo $_GET['page'] - 1 ?>"><span aria-hidden="true">&laquo;</span></a>
@@ -185,7 +187,6 @@ $query2=$conn->query($sql2);
                 </li>
             </ul>
         </nav>
-    </div>
     <br>
 </div>
 

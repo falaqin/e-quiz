@@ -10,7 +10,7 @@ $sql="SELECT * FROM quiz_list WHERE id = $quizID";
 $query=$conn->query($sql);
 $callQuiz = mysqli_fetch_assoc($query);
 
-$sql2 = "SELECT * FROM `student_answer` sa INNER JOIN question q WHERE q.id = sa.question_id AND sa.std_id = $stdID";
+$sql2 = "SELECT * FROM `student_answer` sa INNER JOIN question q WHERE q.id = sa.question_id AND sa.std_id = $stdID AND q.quiz_id = $quizID";
 $query2 = $conn->query($sql2);
 ?>
 <br>

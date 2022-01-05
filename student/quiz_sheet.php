@@ -23,7 +23,7 @@ if ($callChecking['id'] == '') {
     header("Location:index.php");
 }
 
-$scoreID_SQL = "SELECT * FROM student_score WHERE std_id = '$SQLstd_id'";
+$scoreID_SQL = "SELECT * FROM student_score WHERE std_id = '$SQLstd_id' AND quiz_id = $quizID";
 $scoreIDquery = $conn->query($scoreID_SQL);
 $call_scoreID = mysqli_fetch_assoc($scoreIDquery);
 

@@ -66,7 +66,10 @@ $queryMarksTable = $conn->query($sqlMarksTable);
                                                             <td><?php echo $callMarksTable['std_matric'] ?></td>
                                                             <td><?php echo $callMarksTable['std_points'] ?></td>
                                                             <td><?php echo $callMarksTable['total_points'] ?></td>
-                                                            <td><a href="answer_details.php?id=<?php echo $callMarksTable['std_id'] ?>&quiz=<?php echo $id ?>&class=<?php echo $class ?>" class="btn btn-sm btn-primary bi bi-eye-fill shadow-sm"></a></td>
+                                                            <td>
+                                                                <a href="answer_details.php?id=<?php echo $callMarksTable['std_id'] ?>&quiz=<?php echo $id ?>&class=<?php echo $class ?>" class="btn btn-sm btn-primary bi bi-eye-fill shadow-sm"></a>
+                                                                <a href="javascript:void(0)" onclick="delete_data('delete_detail_answer.php?id=<?php echo $callMarksTable['std_id'] ?>&quiz=<?php echo $id ?>&class=<?php echo $class ?>')" class="btn btn-sm btn-outline-danger bi bi-trash" title="Delete"></a>
+                                                            </td>
                                                         </tr>
                                                         <?php endwhile; ?>
                                                     </tbody>
