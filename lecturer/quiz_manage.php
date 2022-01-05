@@ -9,7 +9,7 @@ $sql = 'SELECT * FROM quiz_list WHERE id = '. $id .'';
 $query = $conn->query($sql);
 $row = mysqli_fetch_assoc($query);
 
-$sqlquestion = "SELECT * FROM question WHERE quiz_id = $id ORDER BY date_updated ASC";
+$sqlquestion = "SELECT * FROM question WHERE quiz_id = $id ORDER BY id ASC";
 $queryquestion = $conn->query($sqlquestion);
 
 $sqlclass = "SELECT * FROM student_quiz sq INNER JOIN class c WHERE sq.class_id = c.class_id AND sq.quiz_id = $id ORDER BY sq.date_updated ASC";
@@ -51,15 +51,15 @@ $queryclass = $conn->query($sqlclass);
 });
 </script>
 
-<div class="container bg-gradient text-light">
+<div class="container">
     <br>
-    <h2>Title: <?php echo $row['title'] ?> <a href="quiz_list.php" class="btn btn-sm btn-secondary">Back</a></h2>
+    <h2 class="bi bi-pencil-square"> Title: <?php echo $row['title'] ?> <a href="quiz_list.php" class="btn btn-sm btn-secondary">Back</a></h2>
     <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addquestion">Add Question</button>
 	<button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addstd">Add Class</button>   
     <br>
     <br>
     <div class="text-dark">
-        <div class="row">
+        <div class="row shadow">
             <div class="card col-sm-6">
                 <div class="card-body">
                     <ul class="list-group">
@@ -69,8 +69,22 @@ $queryclass = $conn->query($sqlclass);
 						?>
                         <li class="list-group-item"> <?php echo $questionrow['question'] ?> <br> <br>
                             <center>
-                                <a href="quiz_question_edit.php?question_id=<?php echo $questionrow['id'] ?>&id=<?php echo $_GET['id'] ?>" class="btn btn-sm btn-outline-primary"><b>Edit</b></a>
-                                <a href="javascript:void(0)" onclick="delete_data('quiz_question_delete.php?questionid=<?php echo $questionrow['id'] ?>&quiz_id=<?php echo $id ?>')" class="btn btn-sm btn-outline-danger"><b>Delete</b></a>
+                                <?php 
+                                $questionid = $questionrow['id'];
+
+                                if ($questionrow['question_type'] == 1):
+                                    echo '<a href="quiz_question_edit.php?question_id='.$questionid.'&id='.$id.'" class="btn btn-sm btn-outline-primary"><b>Edit (Selection)</b></a>';
+                                    echo ' ';
+                                    ?> <a href="javascript:void(0)" onclick="delete_data('quiz_question_delete.php?questionid=<?php echo $questionid ?>&quiz_id=<?php echo $id ?>&type=<?php echo $questionrow['question_type'] ?>')" class="btn btn-sm btn-outline-danger bi bi-trash" title="Delete"></a> <?php
+                                elseif ($questionrow['question_type'] == 2):
+                                    echo '<a href="quiz_question_picture_edit.php?question_id='.$questionid.'&id='.$id.'" class="btn btn-sm btn-outline-primary"><b>Edit (Image)</b></a>';
+                                    echo ' ';
+                                    ?> <a href="javascript:void(0)" onclick="delete_data('quiz_question_img_delete.php?questionid=<?php echo $questionid ?>&quiz_id=<?php echo $id ?>')" class="btn btn-sm btn-outline-danger bi bi-trash" title="Delete"></a> <?php
+                                elseif ($questionrow['question_type'] == 3):
+                                    echo '<a href="quiz_question_edit.php?question_id='.$questionid.'&id='.$id.'" class="btn btn-sm btn-outline-primary"><b>Edit (Combo)</b></a>';
+                                    echo ' ';
+                                    ?> <a href="javascript:void(0)" onclick="delete_data('quiz_question_delete.php?questionid=<?php echo $questionid ?>&quiz_id=<?php echo $id ?>&type=<?php echo $questionrow['question_type'] ?>')" class="btn btn-sm btn-outline-danger bi bi-trash" title="Delete"></a> <?php
+                                endif; ?>
                             </center>
                         </li>
 						<?php endwhile; ?>
@@ -111,7 +125,8 @@ $queryclass = $conn->query($sqlclass);
             <div class="modal-body">
                 <p>Type of Question</p>
                 <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#abcd" data-bs-dismiss="modal">4 Selection question</button>
-                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#picquiz" data-bs-dismiss="modal" disabled>Picture question</button>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#combo" data-bs-dismiss="modal">Combo Question</button>
+                <a href="quiz img.php?id=<?php echo $id ?>" class="btn btn-sm btn-primary">Picture Question</a>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -162,10 +177,69 @@ $queryclass = $conn->query($sqlclass);
                     <input type="text" name="answer4" class="form-control" required>
                     <input type="radio" name="iscorrect[3]" value="1">
                     <label for="iscorrect">Tick if correct answer.</label>
-
+                    
+                    <input type="hidden" value="1" name="type">
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-primary" name="submit" value="Insert">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="combo" tabindex="-1" aria-labelledby="comboquiz" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="comboquiz">Combo question</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form action="quiz_selection_upload.php" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <label>Question</label>
+                    <textarea class="form-control" name="question" cols="30" rows="5" required></textarea>
+                    <br>
+
+                    <label>Picture for Question (optional)</label>
+                    <input type="file" name="image" class="form-control">
+                    <br><br>
+
+                    <input type="hidden" value="<?php echo $id ?>" name="quizid">
+
+                    <label>First answer</label>
+                    <input type="text" name="answer1" class="form-control" required>
+                    <input type="checkbox" name="iscorrect[0]" value="1">
+                    <label for="iscorrect">Tick if correct answer.</label>
+                    <br><br>
+
+                    <label>Second answer</label>
+                    <input type="text" name="answer2" class="form-control" required>
+                    <input type="checkbox" name="iscorrect[1]" value="1">
+                    <label for="iscorrect">Tick if correct answer.</label>
+                    <br><br>
+
+                    <label>Third answer</label>
+                    <input type="text" name="answer3" class="form-control" required>
+                    <input type="checkbox" name="iscorrect[2]" value="1">
+                    <label for="iscorrect">Tick if correct answer.</label>
+                    <br><br>
+                        
+                    <label>Fourth answer</label>
+                    <input type="text" name="answer4" class="form-control" required>
+                    <input type="checkbox" name="iscorrect[3]" value="1">
+                    <label for="iscorrect">Tick if correct answer.</label>
+                    <br><br>
+
+                    <label>Fifth answer</label>
+                    <input type="text" name="answer5" class="form-control" required>
+                    <input type="checkbox" name="iscorrect[4]" value="1">
+                    <label for="iscorrect">Tick if correct answer.</label>
+                    
+                    <input type="hidden" value="3" name="type">
+                </div>
+                <div class="modal-footer">
                     <input type="submit" class="btn btn-primary" name="submit" value="Insert">
                 </div>
             </form>

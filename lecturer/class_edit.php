@@ -12,7 +12,7 @@ $queryClass = $conn->query($sqlClass);
 $result = mysqli_fetch_assoc($queryClass);
 ?>
 
-<div class="container bg-gradient text-light">
+<div class="container">
     <br>
     <h2>
         Edit Class <a href="class_info.php" class="btn btn-sm btn-secondary">Back</a>

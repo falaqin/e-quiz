@@ -23,11 +23,11 @@ if (isset($_POST['submit'])) {
     <div class="login-box">
         <form action="" method="post">
             <h1><?php echo $checkUnique['title']?></h1>
-            <div class="card">
+            <div class="card shadow">
                 <div class="card-header"><h3 style="color: red;">WARNING</h3></div>
                 <div class="card-body">
                     <p>
-                        If you navigate to previous page while answering the quiz, you can no longer participate in the test, and your marks will be 0.
+                        If you <b>navigate to previous page OR refresh</b> while answering the quiz, you can no longer participate in the test, and <b>your marks will be 0</b>.
                     </p>
                 </div>
             </div>

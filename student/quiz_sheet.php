@@ -7,20 +7,31 @@ $quizSQL = "SELECT * FROM quiz_list ql WHERE ql.id = $quizID";
 $queryQuiz = $conn->query($quizSQL);
 $callQuiz = mysqli_fetch_assoc($queryQuiz);
 
-$QuestionSQL = "SELECT q.id, q.question, q.question_img FROM question q WHERE q.quiz_id = $quizID";
+$QuestionSQL = "SELECT q.id, q.question, q.question_img, q.question_type FROM question q WHERE q.quiz_id = $quizID";
 $queryQuestion = $conn->query($QuestionSQL);
 
-$QueryFor_stdScore = "INSERT INTO student_score (quiz_id, std_id, std_points, total_points)
-VALUES ('$quizID','$SQLstd_id','0','0');";
+$checkingSQL = "SELECT * FROM student_score sc WHERE sc.std_id = $SQLstd_id AND quiz_id = $quizID";
+$queryCheck = $conn->query($checkingSQL);
+$callChecking = mysqli_fetch_assoc($queryCheck);
 
-$RunQuery_stdScore = mysqli_query($conn, $QueryFor_stdScore);
+if ($callChecking['id'] == '') {
+    $QueryFor_stdScore = "INSERT INTO student_score (quiz_id, std_id, std_points, total_points)
+    VALUES ('$quizID','$SQLstd_id','0','0');";
+    $RunQuery_stdScore = mysqli_query($conn, $QueryFor_stdScore);
+    
+} else {
+    header("Location:index.php");
+}
+
+$scoreID_SQL = "SELECT * FROM student_score WHERE std_id = '$SQLstd_id'";
+$scoreIDquery = $conn->query($scoreID_SQL);
+$call_scoreID = mysqli_fetch_assoc($scoreIDquery);
 
 ?>
 
 <div class="container">
     <br>
-
-    <div class="card bg-danger">
+    <div class="card bg-danger shadow">
         <div class="card-header text-center text-white">
             <h1>Timer</h1>
         </div>
@@ -30,37 +41,109 @@ $RunQuery_stdScore = mysqli_query($conn, $QueryFor_stdScore);
         </div>
     </div>
     <br>
-    <?php while ($callQuestion = mysqli_fetch_assoc($queryQuestion)): ?>
     <form action="quiz_result.php" method="post">
-        <div class="card">
-            <?php if ($callQuestion['question_img'] != '') {
-                ?> <img src="../uploads/<?php echo $callQuestion['question_img']; ?>" class="card-img-top center" alt="quiz image"> <?php
-            } ?>
-            <div class="card-header text-center">
-                <?php
-                    $questionID = $callQuestion['id'];
-                    echo $callQuestion['question'];
-                    
-                ?>
-                <input type="hidden" value="<?php echo $questionID ?>" name="question_id[]">
-            </div>
-            <div class="card-body">
-                <?php
-                $OptionSQL = "SELECT qo.id, qo.question_id, qo.option_text, qo.option_img, qo.is_right FROM question_option qo WHERE qo.question_id = $questionID";
-                $queryOption = $conn->query($OptionSQL);
+        <input type="hidden" name="student_score_ID" value="<?php echo $call_scoreID['id'] ?>">
+    <?php while ($callQuestion = mysqli_fetch_assoc($queryQuestion)): ?>
+        <?php if ($callQuestion['question_type'] == 1) { ?>
+            <div class="card shadow">
+                <?php if ($callQuestion['question_img'] != '') {
+                    ?> <img src="../uploads/<?php echo $callQuestion['question_img']; ?>" class="card-img-top center" alt="quiz image" style="max-width: 300px;"> <hr> <?php
+                } ?>
+                <div class="card-header text-center">
+                    <?php
+                        $questionID = $callQuestion['id'];
+                        echo $callQuestion['question'];
+                        
+                    ?>
+                    <input type="hidden" value="<?php echo $questionID ?>" name="question_id[]">
+                </div>
+                <div class="card-body">
+                    <?php
+                    $OptionSQL = "SELECT qo.id, qo.question_id, qo.option_text, qo.option_img, qo.is_right FROM question_option qo WHERE qo.question_id = $questionID";
+                    $queryOption = $conn->query($OptionSQL);
 
-                while ($callOption = mysqli_fetch_assoc($queryOption)):
-                ?>
-                <input type="radio" name="answer<?php echo $questionID?>[]" class="form-check-input" value="<?php echo $callOption['is_right'] ?>">
-                <label class="form-check-label"><?php echo $callOption['option_text']?></label>
-                <br>
-                <?php
-                endwhile;
-                ?>
-                <input type="hidden" value="<?php echo $quizID ?>" name="quizid">
+                    while ($callOption = mysqli_fetch_assoc($queryOption)):
+                    ?>
+                    <input type="radio" name="answer<?php echo $questionID?>[]" class="form-check-input" value="<?php echo $callOption['is_right'] ?>">
+                    <label class="form-check-label"><?php echo $callOption['option_text']?></label>
+                    <br>
+                    <?php
+                    endwhile;
+                    ?>
+                    <input type="hidden" value="<?php echo $quizID ?>" name="quizid">
+                    <input type="hidden" value="<?php echo $callQuestion['question_type'] ?>" name="question_type[]">
+                </div>
             </div>
-        </div>
-        <br>
+            <br>
+        <?php } else if ($callQuestion['question_type'] == 2) { ?>
+            <div class="card shadow">
+                <div class="card-header text-center">
+                    <?php
+                        $questionID = $callQuestion['id'];
+                        echo $callQuestion['question'];
+                    ?>
+                    <input type="hidden" value="<?php echo $questionID ?>" name="question_id[]">
+                </div>
+
+                <div class="card-body">
+                    <?php
+                    $OptionSQL = "SELECT qo.id, qo.question_id, qo.option_text, qo.option_img, qo.is_right FROM question_option qo WHERE qo.question_id = $questionID";
+                    $queryOption = $conn->query($OptionSQL);
+
+                    while ($callOption = mysqli_fetch_assoc($queryOption)):
+                    ?>
+                    <input type="checkbox" name="answer<?php echo $questionID?>[]" class="form-check-input" value="<?php echo $callOption['is_right'] ?>">
+                    <img src="../uploads/<?php echo $callOption['option_img'] ?>" alt="<?php echo $callOption['option_img'] ?>" style="max-width: 100px;">
+
+                    <br>
+                    <?php
+                    endwhile;
+                    ?>
+                    <input type="hidden" value="<?php echo $quizID ?>" name="quizid">
+                    <input type="hidden" value="<?php echo $callQuestion['question_type'] ?>" name="question_type[]">
+                </div>
+            </div>
+            <br>
+        <?php } else if ($callQuestion['question_type'] == 3) {
+            ?>
+            <div class="card shadow">
+                <?php if ($callQuestion['question_img'] != '') {
+                    ?> <img src="../uploads/<?php echo $callQuestion['question_img']; ?>" class="card-img-top center" alt="quiz image" style="max-width: 300px;"> <hr> <?php
+                } ?>
+                <div class="card-header text-center">
+                    <?php
+                        $questionID = $callQuestion['id'];
+                        echo $callQuestion['question'];
+                    ?>
+                    <input type="hidden" value="<?php echo $questionID ?>" name="question_id[]">
+                </div>
+
+                <div class="card-body">
+                    <?php
+                    $OptionSQL = "SELECT qo.id, qo.question_id, qo.option_text, qo.option_img, qo.is_right FROM question_option qo WHERE qo.question_id = $questionID";
+                    $queryOption = $conn->query($OptionSQL);
+                    ?>
+                    <center>
+                        <label class="form-label">Select your answers.</label> <br>
+                        <select class="answer-selection form-control" name="answer<?php echo $questionID ?>[]" multiple="multiple" style="width: 75%">
+                            <?php 
+                            while ($callOption = mysqli_fetch_assoc($queryOption)):
+                            ?>
+                            <option value="<?php echo $callOption['is_right'] ?>"><?php echo $callOption['option_text'] ?></option>
+                            <?php
+                            endwhile;
+                            ?>
+                        </select>
+                    </center>
+                    <br>
+                    
+                    <input type="hidden" value="<?php echo $quizID ?>" name="quizid">
+                    <input type="hidden" value="<?php echo $callQuestion['question_type'] ?>" name="question_type[]">
+                </div>
+            </div>
+            <br>
+
+        <?php } ?>
         <?php endwhile; ?>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -91,7 +174,6 @@ $RunQuery_stdScore = mysqli_query($conn, $QueryFor_stdScore);
 
 <style>
     .card {
-        box-shadow: 3px 5px 7px #0B090A;
         border: 0;   
     }
 
@@ -143,6 +225,12 @@ $RunQuery_stdScore = mysqli_query($conn, $QueryFor_stdScore);
             document.getElementById('submit').click();
         }
     }, 1000); //<-- timer refreshes every 1 second
+
+    $(document).ready(function() {
+        $('.answer-selection').select2({
+            width: 'resolve'
+        });
+    });
 </script>
 
 <?php 

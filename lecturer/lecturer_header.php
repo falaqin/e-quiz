@@ -32,7 +32,6 @@ $call=mysqli_fetch_assoc($query);
     <title>E-QUIZ System (EQS)</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="stylish.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
@@ -56,11 +55,42 @@ $call=mysqli_fetch_assoc($query);
             }
         }
         </script>
+
+        <style>
+            .bg-style {
+                background-color: #B7B7A4;
+            }
+
+            html,
+            body,
+            .intro {
+            height: 100%;
+            }
+
+            table td,
+            table th {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            }
+
+            .card {
+            border-radius: .5rem;
+            }
+
+            .table-scroll {
+            border-radius: .5rem;
+            }
+
+            .table-scroll table thead th {
+            font-size: 1.25rem;
+            }
+        </style>
     </head>
 
     <body class="bg-dark">
     <!-- navbar here -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-style">
+    <nav class="navbar navbar-expand-lg navbar-light bg-style shadow-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
                 <img src="../assets/logo_equiz_no_text.png" style="width:50px; margin-left: 10px;">
@@ -103,7 +133,7 @@ $call=mysqli_fetch_assoc($query);
                     </li>
 
                     <li class="nav-item active">
-                        <a class="nav-link" href="">Reports</a>
+                        <a class="nav-link" href="reports.php">Reports</a>
                     </li>
                 </ul>
 

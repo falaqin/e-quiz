@@ -39,22 +39,21 @@ $query2=$conn->query($sql2);
     }
 </style>
 
-
+<br>
 <div class="container text-light">
-    <br>
-    <h2>Quiz List
-    </h2>
-
-    <div class="table-responsive">
-        <table class="table table-dark table-striped">
+    <h1 class="bi bi-bar-chart-fill"> Reports <h4>Quiz Details</h4></h1>
+    <a href="reports.php" class="btn btn-outline-primary text-light shadow">Quiz Results</a>
+    <a href="quiz.php" class="btn btn-outline-primary text-light shadow">Quiz Detail</a>
+    <a href="summary_report.php" class="btn btn-outline-primary text-light shadow">Summary PDF</a>
+    <br><br>
+    <div class="table-responsive table-scroll">
+        <table class="table table-dark table-striped table-bordered shadow table-hover">
             <thead>
                 <tr>
                     <th>No</th>
                     <th>Title Quiz</th>
-                    <th>Total questions</th>
                     <th>Created By</th>
-                    <th>Status</th>
-                    <th>Unique Key</th>
+                    <th>View Detail</th>
                 </tr>
             </thead>
 
@@ -72,15 +71,6 @@ $query2=$conn->query($sql2);
                     <td><?php echo $row['title'] ?></td>
                     <td>
                         <?php 
-                        $quiz_id = $row['id'];
-                        $sql_total_quiz = "SELECT COUNT(id) AS TOTALQUESTION FROM question WHERE quiz_id = ". $quiz_id ."";
-                        $query_total_quiz = $conn->query($sql_total_quiz);
-                        $row_total_quiz = mysqli_fetch_assoc($query_total_quiz);
-                        echo $row_total_quiz['TOTALQUESTION'];
-                        ?>
-                    </td>
-                    <td>
-                        <?php 
                         $userid = $row['u_id'];
                         $sql_name = 'SELECT user_name FROM user WHERE u_id=' . $userid . '';
                         $query_name=$conn->query($sql_name);
@@ -89,12 +79,10 @@ $query2=$conn->query($sql2);
                         ?>
                     </td>
 
-                    <td>
-                        <?php echo $active[$row['is_active']] ?>
-                    </td>
 
                     <td>
-                        <?php echo md5($row['quiz_pw']); ?>
+                        <a href="view_quiz.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-success bi bi-eye-fill"></a>
+                        
                     </td>
                 </tr>
 

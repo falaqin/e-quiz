@@ -6,7 +6,7 @@ include('admin_header.php');
 include('../inc/database.php');
 ?>
 
-<div class="container text-light bg-gradient">
+<div class="container text-light">
     <br>
     <h2 class="bi bi-folder">
         Class Form <a href="class_info.php" class="btn btn-sm btn-secondary">Back</a>
@@ -14,7 +14,7 @@ include('../inc/database.php');
     
     <div class="container text-light row">
         <form action="class_add.php" method="post">
-            <div class="card text-dark col-md-4 d-flex" style="width:inherit">
+            <div class="card text-dark col-md-4 d-flex shadow" style="width:inherit">
                 <div class="card-body">
                     <div class="form-group">
                         <label for="class">Class Name</label>

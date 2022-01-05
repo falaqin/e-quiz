@@ -7,12 +7,13 @@ if (isset($_POST['submit'])) {
     $title = $p['title'];
     $point=$p['points'];
     $pw=$p['pw'];
+    $timer = $p['timer'];
     $id=$p['lecturer'];
     $active=$p['toggle'];
     if ($active == '1') {
         /* sql statement */
-        $quiz_query = "INSERT INTO quiz_list (title, points, u_id, is_active, quiz_pw)
-        VALUES('$title','$point','$id', '$active', '$pw')";
+        $quiz_query = "INSERT INTO quiz_list (title, points, timer, u_id, is_active, quiz_pw)
+        VALUES('$title','$point', '$timer', '$id', '$active', '$pw')";
 
         $quiz_query_run = mysqli_query($conn, $quiz_query);
 
@@ -26,8 +27,8 @@ if (isset($_POST['submit'])) {
         $active = '0';
 
         /* sql statement */
-        $quiz_query = "INSERT INTO quiz_list (title, points, u_id, is_active)
-        VALUES('$title','$point','$id', '$active')";
+        $quiz_query = "INSERT INTO quiz_list (title, points, timer, u_id, is_active, quiz_pw)
+        VALUES('$title','$point', '$timer', '$id', '$active', '$pw')";
 
         $quiz_query_run = mysqli_query($conn, $quiz_query);
 

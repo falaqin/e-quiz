@@ -2,7 +2,9 @@
         <!-- FOOTER -->
         <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
             <div class="container text-center">
-            <small>E-QUIZ</small><br>
+            <small>E-QUIZ @ 2022 - Make It Easy</small>
+                <p>System is created for PSMZA. All rights to PSMZA</p>
+                <p>Falaqin - Adib - Ainn</p>
             </div>
         </footer>
     </body>
@@ -21,7 +23,6 @@
     /* Other Classes for Page Styling */
 
     body {
-    background: linear-gradient(to left,   #68646a ,   #7181dd
- );
+    background: linear-gradient(to left,   #DDBEA9 ,   #EDDCD2);
     }
 </style>

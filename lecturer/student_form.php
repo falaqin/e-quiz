@@ -16,15 +16,15 @@ while ($result=$class->fetch_assoc()) {
 }
 ?>
 
-<div class="container bg-gradient text-light">
+<div class="container">
     <br>
     <h2 class="bi bi-file-person">
         Student Form <a href="#addmore" data-bs-toggle="modal" class="btn btn-sm btn-info">Add More</a>
     </h2>
 
-    <div class="container text-light">
+    <div class="container">
         <form method="post" action="add_std.php">
-            <div class="card text-dark col-md-4 d-flex" style="width: inherit;">
+            <div class="card text-dark col-md-4 d-flex shadow" style="width: inherit;">
                 <div class="card-body">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -66,7 +66,7 @@ while ($result=$class->fetch_assoc()) {
             
             <?php if(isset($_POST['test'])) {
                 for ($i=0; $i < $_POST['amountuser'] - 1 ; $i++) { ?>
-                    <div class="card text-dark col-md-4 d-flex" style="width: inherit;">
+                    <div class="card text-dark col-md-4 d-flex shadow" style="width: inherit;">
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">Name</label>
@@ -107,7 +107,7 @@ while ($result=$class->fetch_assoc()) {
                     <br>
                 <?php } ?>
             <?php } ?>
-            <div class="card text-dark">
+            <div class="card shadow">
                 <div class="card-body">
                     <a href="student_info.php" class="btn btn-secondary">Back</a>
                     <input type="submit" name="save" id="" class="btn btn-primary">

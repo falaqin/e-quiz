@@ -6,7 +6,7 @@ include('admin_header.php');
 include('../inc/database.php');
 
 //for looping
-$loopinput = '<div class="card text-dark col-md-4 d-flex" style="width: inherit;">
+$loopinput = '<div class="card text-dark col-md-4 d-flex shadow" style="width: inherit;">
 <div class="card-body">
     <div class="form-group">
         <label for="name">Name</label>
@@ -36,14 +36,14 @@ $loopinput = '<div class="card text-dark col-md-4 d-flex" style="width: inherit;
 <br>';
 ?>
 
-<div class="container bg-gradient text-light"> 
+<div class="container text-light"> 
     <br>
     <h2 class="bi bi-file-person">
         User Form <a href="#addmore" data-bs-toggle="modal" class="btn btn-sm btn-info">Add More</a>
     </h2>
     <div class="container text-light row">
         <form method="post" action="add_user.php">
-            <div class="card text-dark col-md-4 d-flex" style="width: inherit;">
+            <div class="card text-dark col-md-4 d-flex shadow" style="width: inherit;">
                 <div class="card-body">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -76,7 +76,7 @@ $loopinput = '<div class="card text-dark col-md-4 d-flex" style="width: inherit;
                     echo $loopinput;
                 }
             } ?>
-            <div class="card text-dark">
+            <div class="card text-dark shadow">
                 <div class="card-body">
                     <a href="user_info.php" class="btn btn-secondary">Back</a>
                     <input type="submit" name="save" id="" class="btn btn-primary">

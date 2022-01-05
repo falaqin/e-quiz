@@ -35,7 +35,7 @@ if(isset($_POST['save'])) {
 
 ?>
 
-<div class="container bg-gradient text-light">
+<div class="container">
     <br>
     <h2>Quiz Form <a href="quiz_list.php" class="btn btn-sm btn-secondary">Back</a></h2>
 

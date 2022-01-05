@@ -27,7 +27,6 @@ $call=mysqli_fetch_assoc($query);
         <title>E-QUIZ System (EQS)</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="stylish.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
@@ -54,13 +53,42 @@ $call=mysqli_fetch_assoc($query);
     
     <style>
         .bg-style {
-            background: #4895EF;
+            background: #D5C6E0;
+        }
+
+        html,
+        body,
+        .intro {
+        height: 100%;
+        }
+
+        table td,
+        table th {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        }
+
+        thead th {
+        color: #fff;
+        }
+
+        .card {
+        border-radius: .5rem;
+        }
+
+        .table-scroll {
+        border-radius: .5rem;
+        }
+
+        .table-scroll table thead th {
+        font-size: 1.25rem;
         }
     </style>
 
-    <body class="bg-dark">
+    <body>
     <!-- navbar here -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-style">
+    <nav class="navbar navbar-expand-lg navbar-light bg-style shadow-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
                 <img src="../assets/logo_equiz_no_text.png" style="width:50px; margin-left: 10px;">
@@ -78,9 +106,9 @@ $call=mysqli_fetch_assoc($query);
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Users
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="user_info.php">User Info</a>
+                                <a class="dropdown-item" href="user_info.php?page=1">User Info</a>
                                 <a class="dropdown-item" href="user_form.php">Add New User</a>
                             </li>
                         </ul> 
@@ -90,9 +118,9 @@ $call=mysqli_fetch_assoc($query);
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Students
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="student_info.php">Students Info</a>
+                                <a class="dropdown-item" href="student_info.php?page=1">Students Info</a>
                                 <a class="dropdown-item" href="std_form.php">Add new Student</a>
                             </li>
                         </ul>
@@ -102,20 +130,24 @@ $call=mysqli_fetch_assoc($query);
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Class
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="class_info.php">Classes Info</a>
+                                <a class="dropdown-item" href="class_info.php?page=1">Classes Info</a>
                                 <a class="dropdown-item" href="class_form.php">Add new Class</a>
                             </li>
                         </ul>
                     </li>
 
-                    <li class="nav-item active">
-                        <a class="nav-link" href="quiz.php">Quiz List</a>
-                    </li>
-
-                    <li class="nav-item active">
-                        <a class="nav-link" href="">Reports</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Reports
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="reports.php" class="dropdown-item">Quiz Results</a>
+                                <a href="quiz.php" class="dropdown-item">Quiz Details</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
 

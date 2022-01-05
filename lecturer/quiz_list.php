@@ -8,6 +8,10 @@ include('../inc/database.php');
 //get user id
 $lecid = $_SESSION['user_id'];
 
+if ($_GET['page'] == '') {
+    $_GET['page'] = 1;
+}
+
 $rpp = 10;
 //check set page
 isset($_GET['page']) ? $page = $_GET['page'] : $page = 0;
@@ -44,7 +48,7 @@ $query2=$conn->query($sql2);
 </style>
 
 
-<div class="container text-light">
+<div class="container">
     <br>
     <h2>Quiz List
         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addquiz">
@@ -52,7 +56,7 @@ $query2=$conn->query($sql2);
         </button>
     </h2>
 
-    <div class="modal fade" id="addquiz" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade text-light" id="addquiz" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog bg-dark">
             <div class="modal-content bg-dark">
                 <div class="modal-header bg-dark">
@@ -70,6 +74,11 @@ $query2=$conn->query($sql2);
                         <div class="form-group">
                             <label for="points">Points per question</label>
                             <input type="number" name="points" min="1" max="10" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timer">Timer in minutes</label>
+                            <input type="number" name="timer" min="5" max="15" class="form-control" required>
                         </div>
 
                         <div class="form-group">
@@ -95,14 +104,15 @@ $query2=$conn->query($sql2);
             </div>
         </div>
     </div>
-    <div class="table-responsive">
-        <table class="table table-light table-striped">
+    <span>Page <?php echo $_GET['page']?></span>
+    <div class="table-responsive table-scroll">
+        <table class="table table-light table-striped shadow table-hover table-bordered">
             <thead>
                 <tr>
                     <th>No</th>
                     <th>Title Quiz</th>
                     <th>Total questions</th>
-                    <th>Assigned To</th>
+                    <th>Created By</th>
                     <th>Unique Key</th>
                     <th>Status</th>
                     <th>Configuration</th>

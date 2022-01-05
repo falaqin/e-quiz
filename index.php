@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 <!DOCTYPE html>
 
 <!-- @@@@@@@@@@please remember artist for vector art is Lina Leusenko -->
@@ -19,7 +20,7 @@
             <img class="logo" src="./assets/logo_equiz_no_text.png"/> E-Quiz
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"><b>{ }</b></span>
+            <span class="navbar-toggler-icon bi bi-eye-fill"><b></b></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
@@ -28,9 +29,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php#about-us">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php#contact">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="adminlogin.php">Admin</a>
@@ -104,8 +102,6 @@
             <div class="col text-col">
                 <h1>About Us</h1>
                 <p>As a developer, we are motivated and striving to create a completely flexible and a good system environment for the lecturers and students to work with.</p>
-                <p>Placeholder</p>
-                <button type="button" class="btn btn-dark btn-large">button apa ni</button>
             </div>
             </div>
         </div>
@@ -117,8 +113,10 @@
         <div class="container">
             <div class="row align-items-center">
             <div class="col">
-                <h1>Contact US</h1>
-                <p>Placeholder - Tambah BUTTON and PARAGRAPH</p>
+                <h1>Created by US</h1>
+                <p>Muhammad Falaqin Hakimi Bin Mohd Sabri - <b>13DDT19F1133</b></p>
+                <p>Adib Haikal Bin Abdul Rashid - <b>13DDT19F1147</b></p>
+                <p>Nur Ain Syafiqa Binti Mohd Norizal - <b>13DDT19F1084</b></p>
             </div>
             </div>
         </div>

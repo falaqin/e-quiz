@@ -21,7 +21,7 @@ if(isset($_POST["saveimport"])){
 			if(!$result)
 			{
 				echo "<script type=\"text/javascript\">
-				alert(\"Invalid File:Please Upload CSV File.\");
+				alert(\"Invalid File: Please Upload CSV File.\");
 				window.location = \"student_info.php\"
 				</script>";
  			}

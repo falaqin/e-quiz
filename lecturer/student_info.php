@@ -5,6 +5,10 @@ include('lecturer_header.php');
 //Import database connection
 include('../inc/database.php');
 
+if ($_GET['page'] == '') {
+    $_GET['page'] = 1;
+}
+
 $rpp = 10;
 //check set page
 isset($_GET['page']) ? $page = $_GET['page'] : $page = 0;
@@ -25,20 +29,15 @@ $numRows = $query->num_rows;
 
 //total number of pages
 $totalPages = $numRows / $rpp;
-
-//sql statement
-$sql2="SELECT * FROM student s INNER JOIN class c WHERE c.class_id = s.class_id LIMIT $start, $rpp";
-//run query
-$query2=$conn->query($sql2);
 ?>
 
-<div class="container text-light">
+<div class="container">
     <br>
     <h2 class="bi bi-file-person">
         Student Info <a href="student_form.php" class="btn btn-sm btn-primary">Add Student</a>
     </h2>
 
-    <div class="card text-dark" style="width: inherit;">
+    <div class="card shadow" style="width: inherit;">
         <form action="import.php" method="post" enctype="multipart/form-data">
             <div class="card-header">
                 Import Students with CSV
@@ -47,26 +46,46 @@ $query2=$conn->query($sql2);
             <div class="card-body">
                 <input type="file" name="file" class="form-control" required> <br>
                 <input type="submit" name="saveimport" value="Import" class="btn btn-sm btn-primary">
+                <a href="../assets/student.csv" class="btn btn-sm btn-info" title="Student CSV" download>CSV Template Download</a>
             </div>
         </form>
     </div>
     <br>
+    <form class="row g-2" method="POST">
+        <div class="col-5">
+            <input type="text" class="form-control" placeholder="Search here" name="search">
+        </div>
+        <div class="col-auto">
+            <div class="btn-group" role="group">
+                <input type="submit" class="btn btn-info mb-3 shadow" name="submit" value="Search">
+                <a href="student_info.php?page=1" class="btn btn-secondary mb-3 shadow">Refresh</a>
+            </div>
+        </div>
+    </form>
+    <span>Page <?php echo $_GET['page']?></span>
 
-    <div class="table-responsive">
-        <table class="table table-light table-striped">
+    <div class="table-responsive table-scroll">
+        <table class="table table-light table-striped shadow table-hover table-bordered">
             <thead>
                 <tr>
                     <th>No</th>
                     <th>Name</th>
                     <th>Matric No.</th>
+                    <th>Session</th> 
                     <th>Class</th>
-                    <th>Session</th>
                     <th>Configuration</th>
                 </tr>
             </thead>
 
             <tbody>
                 <?php
+                    if(isset($_POST['submit'])):
+                        $qsearch = $_POST['search'];
+                        $sql2 = "SELECT * FROM student s INNER JOIN class c WHERE c.class_id = s.class_id AND std_name LIKE '%$qsearch%' OR std_matric LIKE '%$qsearch%'";
+                    else:
+                        $sql2="SELECT * FROM student s INNER JOIN class c WHERE c.class_id = s.class_id LIMIT $start, $rpp";;
+                    endif;
+                    $query2 = $conn->query($sql2); 
                     //initial value no
                     $no=1;
 
@@ -96,20 +115,22 @@ $query2=$conn->query($sql2);
         </table>
 
     </div>
-    <nav>
-        <ul class="pagination">
-            <li class="page-item <?php if ($_GET['page'] <= 1) { echo "disabled"; } ?>">
-                <a class="page-link" href="?page=<?php echo $_GET['page'] - 1 ?>"><span aria-hidden="true">&laquo;</span></a>
-            </li>
-        <?php
-        for ($i=1; $i < $totalPages + 1; $i++) { ?>
-            <li class="page-item"><a class="page-link" href="?page=<?php echo $i ?>"><?php echo $i ?></a></li>
-        <?php } ?>
-            <li class="page-item <?php if ($_GET['page'] == $i - 1 or $_GET['page'] == '') { echo "disabled"; } ?>">
-                <a class="page-link" href="?page=<?php echo $_GET['page'] + 1 ?>"><span aria-hidden="true">&raquo;</span></a>
-            </li>
-        </ul>
-    </nav>
+    <?php if (!(isset($_POST['submit']))): ?>
+        <nav>
+            <ul class="pagination">
+                <li class="page-item <?php if ($_GET['page'] <= 1) { echo "disabled"; }?>">
+                    <a class="page-link" href="?page=<?php echo $_GET['page'] - 1 ?>"><span aria-hidden="true">&laquo;</span></a>
+                </li>
+            <?php
+            for ($i=1; $i < $totalPages + 1; $i++) { ?>
+                <li class="page-item"><a class="page-link" href="?page=<?php echo $i ?>"><?php echo $i ?></a></li>
+            <?php } ?>
+                <li class="page-item <?php if ($_GET['page'] == $i - 1 or $_GET['page'] == '') { echo "disabled"; } ?>">
+                    <a class="page-link" href="?page=<?php echo $_GET['page'] + 1 ?>"><span aria-hidden="true">&raquo;</span></a>
+                </li>
+            </ul>
+        </nav>
+    <?php endif ?>
 </div>
 <?php
 //Import header file

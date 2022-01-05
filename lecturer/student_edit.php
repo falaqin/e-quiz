@@ -30,7 +30,7 @@ while ($result=$class->fetch_assoc()) {
 
 ?>
 
-<div class="container bg-gradient text-light">
+<div class="container">
     <br>
     <h2>
         Student Form <a href="student_info.php" class="btn btn-sm btn-secondary">Back</a>

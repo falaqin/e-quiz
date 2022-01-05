@@ -34,7 +34,7 @@ $query=$conn->query($sql);
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">
                     <img src="../assets/logo_equiz_no_text.png" alt="logo" style="width: 50px; margin-left: 10px;">
@@ -46,15 +46,15 @@ $query=$conn->query($sql);
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.php">Home</a>
+                            <a class="nav-link" href="index.php">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link active" href="quiz.php">Quiz</a>
+                            <a class="nav-link" href="quiz.php">Quiz</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link active" href="history.php">History</a>
+                            <a class="nav-link" href="history.php">History</a>
                         </li>
                     </ul>
 

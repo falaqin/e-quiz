@@ -5,7 +5,7 @@ include('admin_header.php');
 //import data cons
 include('../inc/database.php');
 
-$rpp = 15;
+$rpp = 5;
 //check set page
 isset($_GET['page']) ? $page = $_GET['page'] : $page = 0;
 //check if page 1
@@ -30,8 +30,8 @@ $queryClass = $conn->query($sqlClass);
     <h2 class="bi bi-folder">
         Class List <a href="class_form.php" class="btn btn-sm btn-primary">Add Class</a>
     </h2>
-    <div class="table-responsive">
-        <table class="table table-sm table-dark table-striped text-light">
+    <div class="table-responsive table-scroll">
+        <table class="table table-dark table-striped text-light table-bordered shadow table-hover" style="text-align: center;">
             <thead>
                 <tr>
                     <th>Class ID</th>
@@ -77,7 +77,7 @@ $queryClass = $conn->query($sqlClass);
         for ($i=1; $i < $totalPages + 1; $i++) { ?>
             <li class="page-item"><a class="page-link" href="?page=<?php echo $i ?>"><?php echo $i ?></a></li>
         <?php } ?>
-            <li class="page-item <?php if ($_GET['page'] == $i - 1) { echo "disabled"; } ?>">
+            <li class="page-item <?php if ($_GET['page'] == $i - 1 or $_GET['page'] == '') { echo "disabled"; } ?>">
                 <a class="page-link" href="?page=<?php echo $_GET['page'] + 1 ?>"><span aria-hidden="true">&raquo;</span></a>
             </li>
         </ul>

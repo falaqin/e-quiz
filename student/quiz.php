@@ -13,61 +13,69 @@ $quizQuery = $conn->query($quizSQL);
 
 <div class="container">
     <br>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th scope="col">No</th>
-                <th scope="col">Title</th>
-                <th scope="col">Created by</th>
-                <th scope="col">Time to answer</th>
-                <th scope="col">Total questions</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $no = 0;
-                while ($callQuiz = mysqli_fetch_assoc($quizQuery)):
-                    $no++;
-            ?>
-            <tr>
-                <th scope="row"><?php echo $no; ?></th>
-                <td><?php echo $callQuiz['title']; ?></td>
-                <td><?php echo $callQuiz['user_name']; ?></td>
-                <td><?php echo $callQuiz['timer'] . " minutes" ?></td>
-                <td>
-                    <?php 
-                    $quiz_id = $callQuiz['quiz_id'];
-                    $sql_total_quiz = "SELECT COUNT(id) AS TOTALQUESTION FROM question WHERE quiz_id = ". $quiz_id ."";
-                    $query_total_quiz = $conn->query($sql_total_quiz);
-                    $row_total_quiz = mysqli_fetch_assoc($query_total_quiz);
-                    echo $row_total_quiz['TOTALQUESTION'];
-                    ?>
-                </td>
-                <td>
-                    <?php
-                    if ($callQuiz['is_active'] == '0') {
-                        ?> <a href="" class="btn btn-sm btn-danger disabled">Disabled</a> <?php
-                    } else {
-                        $quizid1 = $callQuiz['quiz_id'];
-                        $sqlToCheckAvail = "SELECT sc.std_points FROM student_score sc LEFT JOIN student_quiz sq ON sc.quiz_id = sq.quiz_id WHERE sc.std_id = $SQLstd_id AND sc.quiz_id = $quizid1";
-                        $queryAvail = $conn->query($sqlToCheckAvail);
-                        $callAvail = mysqli_fetch_assoc($queryAvail);
+    <h1>Answer your quiz here!</h1>
+    <br>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover shadow table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Created by</th>
+                    <th scope="col">Time to answer</th>
+                    <th scope="col">Total questions</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $no = 0;
+                    while ($callQuiz = mysqli_fetch_assoc($quizQuery)):
+                        $no++;
+                ?>
+                <tr>
+                    <th scope="row"><?php echo $no; ?></th>
+                    <td><?php echo $callQuiz['title']; ?></td>
+                    <td><?php echo $callQuiz['user_name']; ?></td>
+                    <td><?php echo $callQuiz['timer'] . " minutes" ?></td>
+                    <td>
+                        <?php 
+                        $quiz_id = $callQuiz['quiz_id'];
+                        $sql_total_quiz = "SELECT COUNT(id) AS TOTALQUESTION FROM question WHERE quiz_id = ". $quiz_id ."";
+                        $query_total_quiz = $conn->query($sql_total_quiz);
+                        $row_total_quiz = mysqli_fetch_assoc($query_total_quiz);
+                        echo $row_total_quiz['TOTALQUESTION'];
+                        ?>
+                    </td>
+                    <td>
+                        <center>
+                        <?php
+                        if ($callQuiz['is_active'] == '0') {
+                            ?> <a href="" class="btn btn-sm btn-danger disabled">Disabled</a> <?php
+                        } else {
+                            $quizid1 = $callQuiz['quiz_id'];
+                            $sqlToCheckAvail = "SELECT sc.std_points FROM student_score sc LEFT JOIN student_quiz sq ON sc.quiz_id = sq.quiz_id WHERE sc.std_id = $SQLstd_id AND sc.quiz_id = $quizid1";
+                            $queryAvail = $conn->query($sqlToCheckAvail);
+                            $callAvail = mysqli_fetch_assoc($queryAvail);
 
-                        if ($callAvail['std_points'] == '') { ?>
-                            <a href="quiz_check_unique.php?quizid=<?php echo $callQuiz['quiz_id'] ?>" class="btn btn-sm btn-success">Start</a>
-                        <?php } else { ?>
-                            <a href="quiz_check_unique.php?quizid=<?php echo $callQuiz['quiz_id'] ?>" class="btn btn-sm btn-danger disabled">Answered</a>
-                        <?php }
-                    }
-                    ?>
-                </td>
-            </tr>
-            <?php
-            endwhile;
-            ?>
-        </tbody>
-    </table>
+                            if ($callAvail['std_points'] == '') { ?>
+                                <a href="quiz_check_unique.php?quizid=<?php echo $callQuiz['quiz_id'] ?>" class="btn btn-sm btn-success">Start</a>
+                            <?php } else { ?>
+                                <a href="quiz_check_unique.php?quizid=<?php echo $callQuiz['quiz_id'] ?>" class="btn btn-sm btn-danger disabled">Answered</a>
+                            <?php }
+                        }
+                        ?>
+                        </center>
+                    </td>
+                </tr>
+                <?php
+                endwhile;
+                ?>
+            </tbody>
+        </table>
+
+    </div>
+    <br>
 </div>
 
 <?php
