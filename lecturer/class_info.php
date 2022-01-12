@@ -10,7 +10,7 @@ if ($_GET['page'] == '') {
 }
 
 
-$rpp = 7;
+$rpp = 10;
 //check set page
 isset($_GET['page']) ? $page = $_GET['page'] : $page = 0;
 //check if page 1
@@ -26,9 +26,10 @@ $numRows = $queryClassPage->num_rows;
 //total number of pages
 $totalPages = $numRows / $rpp;
 
-$sqlClass = "SELECT * FROM class LIMIT $start, $rpp";
+$sqlClass = "SELECT * FROM class ORDER BY class_section LIMIT $start, $rpp";
 $queryClass = $conn->query($sqlClass);
 ?>
+<title>Class Info</title>
 
 <div class="container">
     <br>
@@ -92,7 +93,9 @@ $queryClass = $conn->query($sqlClass);
         
 </div>
 
+<div class="fixed-bottom">
 <?php
 //footer
 include('lecturer_footer.php');
 ?>
+</div>

@@ -2,7 +2,7 @@
 include("../inc/database.php");
 include("admin_header.php");
 
-$rpp = 10;
+$rpp = 5;
 //check set page
 isset($_GET['page']) ? $page = $_GET['page'] : $page = 0;
 //check if page 1
@@ -24,10 +24,11 @@ $totalPages = $numRows / $rpp;
 $SQLforQuizBasedOnClass = "SELECT ql.id, ql.title, ql.date_updated, u.user_name AS created_by, c.class_section AS std_class, c.class_id FROM `quiz_list` ql JOIN user u, student_quiz sq, class c WHERE ql.u_id = u.u_id AND ql.id = sq.quiz_id AND sq.class_id = c.class_id LIMIT $start, $rpp";
 $QueryQBOC = $conn->query($SQLforQuizBasedOnClass);
 ?>
+<title>Quiz Results</title>
 <br>
 <div class="container text-light">
     <h1 class="bi bi-bar-chart-fill"> Reports <h4>Quiz Results</h4></h1>
-    <a href="reports.php" class="btn btn-outline-primary text-light shadow">Quiz Results</a>
+    <a href="reports.php" class="btn btn-outline-info text-light shadow disabled">Quiz Results</a>
     <a href="quiz.php" class="btn btn-outline-primary text-light shadow">Quiz Detail</a>
     <a href="summary_report.php" class="btn btn-outline-primary text-light shadow">Summary PDF</a>
     <br>
@@ -60,9 +61,9 @@ $QueryQBOC = $conn->query($SQLforQuizBasedOnClass);
                             $callDisable = mysqli_fetch_assoc($queryDisableIfNoAnswer);
 
                             if ($callDisable['std_points'] == ''): ?>
-                            <a href="std_score.php?id=<?php echo $callQBOC['id'] ?>&class=<?php echo $callQBOC['class_id'] ?>" class="btn btn-sm btn-danger bi bi-arrow-bar-right disabled shadow"></a>
+                            <a href="std_score.php?id=<?php echo $callQBOC['id'] ?>&class=<?php echo $callQBOC['class_id'] ?>" class="btn btn-sm btn-danger bi bi-eye-slash disabled shadow"></a>
                             <?php else: ?>
-                                <a href="std_score.php?id=<?php echo $callQBOC['id'] ?>&class=<?php echo $callQBOC['class_id'] ?>" class="btn btn-sm btn-info bi bi-arrow-bar-right shadow"></a>
+                                <a href="std_score.php?id=<?php echo $callQBOC['id'] ?>&class=<?php echo $callQBOC['class_id'] ?>" class="btn btn-sm btn-info bi bi-eye shadow"></a>
                             <?php endif; ?>
 
                     </td>
@@ -87,6 +88,9 @@ $QueryQBOC = $conn->query($SQLforQuizBasedOnClass);
     </nav>
 </div>
 
+<div class="fixed-bottom">
 <?php
-include("admin_footer.php");
+//footer
+include('admin_footer.php');
 ?>
+</div>

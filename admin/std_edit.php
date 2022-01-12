@@ -28,6 +28,7 @@ while ($result=$class->fetch_assoc()) {
 }
 
 ?>
+<title>Edit Student Form</title>
 
 <div class="container bg-gradient text-light">
     <br>
@@ -93,6 +94,8 @@ while ($result=$class->fetch_assoc()) {
     }
 </style>
 
+<div class="fixed-bottom">
 <?php
 include('admin_footer.php');
 ?>
+</div>

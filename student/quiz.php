@@ -7,15 +7,17 @@ WHERE sq.class_id = $classID
 AND s.std_id = $SQLstd_id 
 AND ql.id = sq.quiz_id 
 AND u.u_id = ql.u_id 
-AND sq.class_id = s.class_id;";
+AND sq.class_id = s.class_id
+ORDER BY ql.date_updated DESC";
 $quizQuery = $conn->query($quizSQL);
 ?>
+<title>Student Quiz Page</title>
 
 <div class="container">
     <br>
     <h1>Answer your quiz here!</h1>
     <br>
-    <div class="table-responsive">
+    <div class="table-responsive" style="max-height: 500px;">
         <table class="table table-striped table-hover shadow table-bordered">
             <thead>
                 <tr>
@@ -73,11 +75,12 @@ $quizQuery = $conn->query($quizSQL);
                 ?>
             </tbody>
         </table>
-
     </div>
     <br>
 </div>
 
+<div class="fixed-bottom">
 <?php
 include('std_footer.php');
 ?>
+</div>

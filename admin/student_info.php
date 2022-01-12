@@ -31,6 +31,7 @@ $numRows = $query->num_rows;
 //total number of pages
 $totalPages = $numRows / $rpp;
 ?>
+<title>Student Info</title>
 
 <div class="container text-light">
     <br>
@@ -54,22 +55,23 @@ $totalPages = $numRows / $rpp;
     <br>
     <form class="row g-2" method="POST">
         <div class="col-5">
-            <input type="text" class="form-control" placeholder="Search here" name="search">
+            <input type="text" class="form-control" placeholder="Search name or class" name="search">
         </div>
         <div class="col-auto">
             <div class="btn-group" role="group">
-                <input type="submit" class="btn btn-info mb-3 shadow" name="submit" value="Search">
-                <a href="student_info.php?page=1" class="btn btn-secondary mb-3 shadow">Refresh</a>
+                <input type="submit" class="btn btn-warning mb-3 shadow" name="submit" value="Search by Name">
+                <input type="submit" class="btn btn-info mb-3 shadow" name="submitclass" value="Search by Class">
             </div>
+            <a href="student_info.php?page=1" class="btn btn-secondary mb-3 shadow">Show All</a>
         </div>
     </form>
     <span>Page <?php echo $_GET['page']?></span>
 
-    <div class="table-responsive table-scroll">
+    <div class="table-responsive table-scroll" style="max-height: 700px;">
         <table class="table table-dark table-striped table-bordered shadow table-hover">
             <thead>
                 <tr>
-                    <th>No</th>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Matric No.</th>
                     <th>Class</th>
@@ -83,10 +85,16 @@ $totalPages = $numRows / $rpp;
 
                     if(isset($_POST['submit'])):
                         $qsearch = $_POST['search'];
-                        $sql2 = "SELECT * FROM student s INNER JOIN class c WHERE c.class_id = s.class_id AND std_name LIKE '%$qsearch%' OR std_matric LIKE '%$qsearch%'";
+                        $sql2 = "SELECT * FROM student s INNER JOIN class c WHERE c.class_id = s.class_id AND s.std_name LIKE '%$qsearch%'";
                     else:
-                        $sql2="SELECT * FROM student s INNER JOIN class c WHERE c.class_id = s.class_id LIMIT $start, $rpp";;
+                        $sql2="SELECT * FROM student s INNER JOIN class c WHERE c.class_id = s.class_id ORDER BY s.std_id LIMIT $start, $rpp";;
                     endif;
+                    
+                    if(isset($_POST['submitclass'])):
+                        $qsearch = $_POST['search'];
+                        $sql2 = "SELECT * FROM student s INNER JOIN class c WHERE c.class_id = s.class_id AND c.class_section = '$qsearch'";  
+                    endif;
+                    
                     $query2 = $conn->query($sql2); 
                     //initial value no
                     $no=1;
@@ -96,7 +104,7 @@ $totalPages = $numRows / $rpp;
                 ?>
 
                 <tr>
-                    <td><?php echo $no ?></td>
+                    <td><?php echo $row['std_id'] ?></td>
                     <td><?php echo $row['std_name'] ?></td>
                     <td><?php echo $row['std_matric'] ?></td>
                     <td><?php echo $row['std_session'] ?></td>
@@ -117,7 +125,7 @@ $totalPages = $numRows / $rpp;
         </table>
 
     </div>
-    <?php if (!(isset($_POST['submit']))): ?>
+    <?php if (!(isset($_POST['submit'])) and !(isset($_POST['submitclass']))): ?>
         <nav>
             <ul class="pagination">
                 <li class="page-item <?php if ($_GET['page'] <= 1) { echo "disabled"; }?>">

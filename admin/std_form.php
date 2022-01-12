@@ -15,7 +15,7 @@ while ($result=$class->fetch_assoc()) {
     $i++;
 }
 ?>
-
+<title>Add Student Form</title>
 <div class="container text-light">
     <br>
     <h2 class="bi bi-file-person">
@@ -109,7 +109,7 @@ while ($result=$class->fetch_assoc()) {
             <?php } ?>
             <div class="card text-dark shadow">
                 <div class="card-body">
-                    <a href="user_info.php" class="btn btn-secondary">Back</a>
+                    <a href="student_info.php" class="btn btn-secondary">Back</a>
                     <input type="submit" name="save" id="" class="btn btn-primary">
                 </div>
             </div>

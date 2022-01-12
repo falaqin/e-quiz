@@ -14,12 +14,13 @@ $SQLTotalStudents = "SELECT COUNT(std_id) AS totalstudents FROM student";
 $QueryTotalStudents=$conn->query($SQLTotalStudents);
 $CallTotalStudents=mysqli_fetch_assoc($QueryTotalStudents);
 
-$sql_total_student_answer = "SELECT COUNT(id) AS students_answered FROM student_score";
+$sql_total_student_answer = "SELECT COUNT(student_score.id) AS students_answered FROM student_score";
 $query_student = $conn->query($sql_total_student_answer);
 $call_student = mysqli_fetch_assoc($query_student);
 
 $pdf = new FPDF('P','mm','A4'); //use new class
 $pdf->AddPage();
+$pdf->SetTitle('E-Quiz Career Summary');
 
 //			chart properties
 //position

@@ -18,6 +18,7 @@ $classTitle = $callClass['class_section'];
 
 $pdf = new FPDF('P','mm','A4');
 $pdf->AddPage();
+$pdf->SetTitle('Students Marks');
 $pdf->SetFont('Arial','B',10);
 
 

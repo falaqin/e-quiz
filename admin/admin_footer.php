@@ -3,8 +3,8 @@
         <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
             <div class="container text-center">
             <small>E-QUIZ @ 2022 - Make It Easy</small>
-                <p>System is created for PSMZA. All rights to PSMZA</p>
-                <p>Falaqin - Adib - Ainn</p>
+                <p>System is developed for PSMZA. All rights to JPA / PSMZA</p>
+                <p>Falaqin - Adib - Ain</p>
             </div>
         </footer>
     </body>

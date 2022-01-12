@@ -15,6 +15,7 @@ $queryquestion = $conn->query($sqlquestion);
 $sqlclass = "SELECT * FROM student_quiz sq INNER JOIN class c WHERE sq.class_id = c.class_id AND sq.quiz_id = $id ORDER BY sq.date_updated ASC";
 $queryclass = $conn->query($sqlclass);
 ?>
+<title>Quiz Manager</title>
 <script>
     function matchCustom(params, data) {
     // If there are no search terms, return all of the data
@@ -157,7 +158,7 @@ $queryclass = $conn->query($sqlclass);
 
                     <label>Answer: A</label>
                     <input type="text" name="answer1" class="form-control" required>
-                    <input type="radio" name="iscorrect[0]" value="1">
+                    <input type="radio" name="iscorrect[0]" value="1" checked>
                     <label for="iscorrect">Tick if correct answer.</label>
                     <br><br>
 
@@ -198,6 +199,10 @@ $queryclass = $conn->query($sqlclass);
 
             <form action="quiz_selection_upload.php" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
+                    <div class="alert alert-primary" role="alert">
+                        Combo question can let the students pick more than one answers. Lecturers are endorsed to pick more than one answers!
+                    </div>
+
                     <label>Question</label>
                     <textarea class="form-control" name="question" cols="30" rows="5" required></textarea>
                     <br>
@@ -210,13 +215,13 @@ $queryclass = $conn->query($sqlclass);
 
                     <label>First answer</label>
                     <input type="text" name="answer1" class="form-control" required>
-                    <input type="checkbox" name="iscorrect[0]" value="1">
+                    <input type="checkbox" name="iscorrect[0]" value="1" checked>
                     <label for="iscorrect">Tick if correct answer.</label>
                     <br><br>
 
                     <label>Second answer</label>
                     <input type="text" name="answer2" class="form-control" required>
-                    <input type="checkbox" name="iscorrect[1]" value="1">
+                    <input type="checkbox" name="iscorrect[1]" value="1" checked>
                     <label for="iscorrect">Tick if correct answer.</label>
                     <br><br>
 
@@ -284,7 +289,8 @@ $queryclass = $conn->query($sqlclass);
         $(this).prop("checked", true);
       });
 </script>
-
+<div>
 <?php
-include ("lecturer_footer.php");
+include("lecturer_footer.php");
 ?>
+</div>

@@ -35,7 +35,7 @@ $loopinput = '<div class="card text-dark col-md-4 d-flex shadow" style="width: i
 </div>
 <br>';
 ?>
-
+<title>Add User Form</title>
 <div class="container text-light"> 
     <br>
     <h2 class="bi bi-file-person">

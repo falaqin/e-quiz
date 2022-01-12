@@ -15,6 +15,7 @@ while ($result=$class->fetch_assoc()) {
     $i++;
 }
 ?>
+<title>Add Student Form</title>
 
 <div class="container">
     <br>
@@ -23,7 +24,7 @@ while ($result=$class->fetch_assoc()) {
     </h2>
 
     <div class="container">
-        <form method="post" action="add_std.php">
+        <form method="post" action="student_add.php">
             <div class="card text-dark col-md-4 d-flex shadow" style="width: inherit;">
                 <div class="card-body">
                     <div class="form-group">

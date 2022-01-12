@@ -5,7 +5,7 @@ include('lecturer_header.php');
 //import data cons
 include('../inc/database.php');
 ?>
-
+<title>Add Class Form</title>
 <div class="container">
     <br>
     <h2 class="bi bi-folder">
@@ -30,7 +30,9 @@ include('../inc/database.php');
 
 </div>
 
+<div class="fixed-bottom">
 <?php
 //footer
 include('lecturer_footer.php');
 ?>
+</div>

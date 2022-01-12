@@ -4,7 +4,7 @@ include("lecturer_header.php");
 
 $id = $_GET['id'];
 ?>
-
+<title>Image Question Uploader</title>
 <div class="container">
     <br>
     <div class="card shadow">
@@ -15,6 +15,9 @@ $id = $_GET['id'];
             <input type="hidden" name="id" value="<?php echo $id ?>">
             <input type="hidden" name="type" value="2">
             <div class="card-body">
+                <div class="alert alert-primary" role="alert">
+                    Picture question can let the students pick more than one answers. Lecturers are endorsed to pick more than one answers!
+                </div>
                 <div class="col-12">
                     <label class="form-label">Question</label>
                     <textarea class="form-control" name="question" cols="30" rows="5"></textarea>
@@ -23,14 +26,14 @@ $id = $_GET['id'];
                 <div class="col-12">
                     <label class="form-label">First Image</label>
                     <input type="file" name="image1" class="form-control">
-                    <input type="checkbox" name="iscorrect1" value="1">
+                    <input type="checkbox" name="iscorrect1" value="1" checked>
                     <label>Tick if correct answer.</label>
                 </div>
                 <br>
                 <div class="col-12">
                     <label class="form-label">Second Image</label>
                     <input type="file" name="image2" class="form-control">
-                    <input type="checkbox" name="iscorrect2" value="1">
+                    <input type="checkbox" name="iscorrect2" value="1" checked>
                     <label>Tick if correct answer.</label>
                 </div>
                 <br>

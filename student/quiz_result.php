@@ -19,6 +19,7 @@ $answerForDB = array();
 for ($i=0; $i < $totalQuestion; $i++) { 
     $whichQuestion = $questionID_test[$i];
     $answerArray = $_POST["answer" . $questionID_test[$i]];
+    /* print_r($answerArray); */
     $type = $_POST["question_type"];
 
     if ($type[$i] == 1) {
@@ -50,9 +51,12 @@ for ($i=0; $i < $totalQuestion; $i++) {
         $sqlOption = "SELECT is_right FROM question_option WHERE question_id = '$whichQuestion' AND is_right = '1'";
         $queryRight = $conn->query($sqlOption);
 
+        $Type2TotalFromDB = 0;
+
         while ($callRight = mysqli_fetch_assoc($queryRight)) {
             $Type2TotalFromDB += $callRight['is_right'];
         }
+        
 
         if (empty($answerArray)) {
             $unanswered++;
@@ -79,9 +83,13 @@ for ($i=0; $i < $totalQuestion; $i++) {
         $sqlOption = "SELECT is_right FROM question_option WHERE question_id = '$whichQuestion' AND is_right = '1'";
         $queryRight = $conn->query($sqlOption);
 
+        $Type3TotalFromDB = 0;
+
         while ($callRight = mysqli_fetch_assoc($queryRight)) {
             $Type3TotalFromDB += $callRight['is_right'];
         }
+
+        //echo $Type3TotalFromDB;
 
         if (empty($answerArray)) {
             $unanswered++;
@@ -91,13 +99,13 @@ for ($i=0; $i < $totalQuestion; $i++) {
         } else {
             $answer = array_sum($answerArray);
 
-            if ($answer == $Type2TotalFromDB) {
+            if ($answer == $Type3TotalFromDB) {
                 $correct++;
                 $rightanswer = 1 * $point;
                 $total += $rightanswer;
                 $actualMark += $point;
                 $answerForDB[$i] = 1;
-            } elseif ($answer <> $Type2TotalFromDB) {
+            } elseif ($answer <> $Type3TotalFromDB) {
                 $incorrect++;
                 $actualMark += $point;
                 $answerForDB[$i] = 0;
@@ -144,10 +152,9 @@ if ($RunQuery_stdAnswer) {
     $RunQuery_stdScore = mysqli_query($conn, $QueryFor_stdScore);
     echo '<script> alert("Your answers have been submitted."); </script>';
 }
-
-
-
 ?>
+
+<title>Quiz Result</title>
 
 <canvas id="resultChart" style="width:100%;max-width:900px" class="center"></canvas>
 
@@ -198,7 +205,8 @@ if ($RunQuery_stdAnswer) {
     }
 </style>
 
+<div class="fixed-bottom">
 <?php 
 include('std_footer.php');
-
 ?>
+</div>

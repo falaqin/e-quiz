@@ -5,7 +5,7 @@ include("admin_header.php");
 //import db con
 include('../inc/database.php');
 
-$rpp = 10;
+$rpp = 8;
 //check set page
 isset($_GET['page']) ? $page = $_GET['page'] : $page = 0;
 //check if page 1
@@ -26,11 +26,12 @@ $numRows = $query->num_rows;
 $totalPages = $numRows / $rpp;
 
 //sql statement
-$sql2="SELECT * FROM quiz_list ORDER BY date_updated ASC";
+$sql2="SELECT * FROM quiz_list ORDER BY date_updated DESC";
 
 //run query
 $query2=$conn->query($sql2);
 ?>
+<title>Quiz Details</title>
 
 <style>
     .form-group
@@ -43,14 +44,14 @@ $query2=$conn->query($sql2);
 <div class="container text-light">
     <h1 class="bi bi-bar-chart-fill"> Reports <h4>Quiz Details</h4></h1>
     <a href="reports.php" class="btn btn-outline-primary text-light shadow">Quiz Results</a>
-    <a href="quiz.php" class="btn btn-outline-primary text-light shadow">Quiz Detail</a>
+    <a href="quiz.php" class="btn btn-outline-info text-light shadow disabled">Quiz Detail</a>
     <a href="summary_report.php" class="btn btn-outline-primary text-light shadow">Summary PDF</a>
     <br><br>
     <div class="table-responsive table-scroll">
         <table class="table table-dark table-striped table-bordered shadow table-hover">
             <thead>
                 <tr>
-                    <th>No</th>
+                    <th>ID</th>
                     <th>Title Quiz</th>
                     <th>Created By</th>
                     <th>View Detail</th>
@@ -67,7 +68,7 @@ $query2=$conn->query($sql2);
                     while ($row=mysqli_fetch_assoc($query2)):
                         $no++;
                     ?>
-                    <td><?php echo $no ?></td>
+                    <td><?php echo $row['id'] ?></td>
                     <td><?php echo $row['title'] ?></td>
                     <td>
                         <?php 
@@ -111,6 +112,8 @@ $query2=$conn->query($sql2);
     <br>
 </div>
 
+<div class="fixed-bottom">
 <?php
-include("admin_footer.php");
+include('admin_footer.php');
 ?>
+</div>

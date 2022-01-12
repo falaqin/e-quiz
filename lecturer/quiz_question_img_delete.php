@@ -28,7 +28,7 @@ while ($a <= 4) {
 
 //SQL statement
 $conn->query("DELETE FROM question WHERE id = ".$questionID);
-$conn->query("DELETE FROM question_option WHERE quiz_id = ".$questionID);
+$conn->query("DELETE FROM question_option WHERE question_id = ".$questionID);
 
 //Check and run query
 if($conn->commit())

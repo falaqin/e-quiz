@@ -4,7 +4,8 @@
 <!-- @@@@@@@@@@please remember artist for vector art is Lina Leusenko -->
 <html>
     <head>
-    <title>E-Quiz System Frontpage</title>
+    <link rel="icon" href="assets/logo_equiz_no_text_smallest.png">   
+    <title>E-Quiz</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css">
@@ -113,10 +114,10 @@
         <div class="container">
             <div class="row align-items-center">
             <div class="col">
-                <h1>Created by US</h1>
-                <p>Muhammad Falaqin Hakimi Bin Mohd Sabri - <b>13DDT19F1133</b></p>
-                <p>Adib Haikal Bin Abdul Rashid - <b>13DDT19F1147</b></p>
-                <p>Nur Ain Syafiqa Binti Mohd Norizal - <b>13DDT19F1084</b></p>
+                <h1>Developed For Jabatan Pendidikan Am</h1>
+                <h5>E-Quiz | Make it Easy.</h5>
+                <p>System is developed for PSMZA. All rights to JPA / PSMZA</p>
+                <p>Falaqin - Adib - Ain</p>
             </div>
             </div>
         </div>

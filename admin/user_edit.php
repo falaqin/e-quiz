@@ -18,7 +18,7 @@ $query_check=$conn->query($sql_check);
 $rslt=mysqli_fetch_assoc($query_check);
 
 ?>
-
+<title>Edit User Form</title>
 <div class="container bg-gradient text-light">
     <br>
     <h2>
@@ -61,6 +61,8 @@ $rslt=mysqli_fetch_assoc($query_check);
     }
 </style>
 
+<div class="fixed-bottom">
 <?php
 include('admin_footer.php');
 ?>
+</div>

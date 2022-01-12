@@ -20,6 +20,7 @@ $call_quiz=mysqli_fetch_assoc($query_quiz);
 $call_lecturer=mysqli_fetch_assoc($query_lecturer);
 $call_student=mysqli_fetch_assoc($query_student);
 ?>	
+<title><?php echo $call['user_name']?>'s Dashboard</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
@@ -62,7 +63,7 @@ $call_student=mysqli_fetch_assoc($query_student);
                 <div class="card-header">Start creating a quiz</div>
                 <div class="card-body">
                     <h5 class="card-title">By clicking this button!</h5>
-                    <p class="card-text"><a href="quiz_list.php" class="btn btn-sm btn-primary">Quiz List</a></p>
+                    <p class="card-text"><a href="quiz_list.php" class="btn btn btn-outline-light">Quiz List</a></p>
                 </div>
             </div>
         </div>
@@ -83,15 +84,15 @@ $call_student=mysqli_fetch_assoc($query_student);
         <div class="row align-items-md-stretch">
         <div class="col-md-6">
             <div class="h-100 p-5 text-white bg-dark rounded-3">
-            <h2>Students Section</h2>
-            <p>You can check the students section, adding new students, or update the student's classes!</p>
+            <h2>Students Segment</h2>
+            <p>You can check the students section, adding new students, or update the student's credentials!</p>
             <a href="student_info.php" class="btn btn-outline-light">Student Info</a>
             </div>
         </div>
         <div class="col-md-6">
             <div class="h-100 p-5 bg-light border rounded-3 text-dark">
             <h2>Or, you can..</h2>
-            <p>Add new classes! If there is some sort of an overflow in students amount, you can always create new classes.</p>
+            <p>Add new classes! If there is a need in creating a new class, you can always create a new one.</p>
             <a href="class_info.php" class="btn btn-outline-secondary">Class Info</a>
             </div>
         </div>

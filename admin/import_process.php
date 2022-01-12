@@ -31,10 +31,10 @@ if(isset($_POST["saveimport"])){
 		}
 		fclose($file);
 		//throws a message if data successfully imported to mysql database from excel file
-		/* echo "<script type=\"text/javascript\">
+		echo "<script type=\"text/javascript\">
 		alert(\"CSV File has been successfully Imported.\");
 		window.location = \"user_info.php\"
-		</script>"; */
+		</script>";
 
 		//close of connection
 		mysqli_close($conn); 

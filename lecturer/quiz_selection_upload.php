@@ -71,23 +71,23 @@ if ($_POST['type'] == 1) {
 
     $isc1 = $_POST['iscorrect'][0];
     if ($isc1 != 1) {
-        $isc1 = 0;
+        $isc1 = 2;
     }
     $isc2 = $_POST['iscorrect'][1];
     if ($isc2 != 1) {
-        $isc2 = 0;
+        $isc2 = 2;
     }
     $isc3 = $_POST['iscorrect'][2];
     if ($isc3 != 1) {
-        $isc3 = 0;
+        $isc3 = 2;
     }
     $isc4 = $_POST['iscorrect'][3];
     if ($isc4 != 1) {
-        $isc4 = 0;
+        $isc4 = 2;
     }
     $isc5 = $_POST['iscorrect'][4];
     if ($isc5 != 1) {
-        $isc5 = 0;
+        $isc5 = 2;
     }
 
     echo $questiontype;

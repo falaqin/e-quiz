@@ -13,6 +13,7 @@ $callQuiz = mysqli_fetch_assoc($query);
 $sql2 = "SELECT * FROM `student_answer` sa INNER JOIN question q WHERE q.id = sa.question_id AND sa.std_id = $stdID AND q.quiz_id = $quizID";
 $query2 = $conn->query($sql2);
 ?>
+<title>Answer Details</title>
 <br>
 <div class="container">
     <div class="card shadow">
@@ -38,7 +39,7 @@ $query2 = $conn->query($sql2);
                         <tr>
                             <th scope="col">Question</th>
                             <th scope="col">Question Type</th>
-                            <th scope="col">Answer (Right/False)</th>
+                            <th scope="col">Answer (Correct/Incorrect)</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -5,6 +5,7 @@ include('admin_header.php');
 //import data cons
 include('../inc/database.php');
 ?>
+<title>Add Class Form</title>
 
 <div class="container text-light">
     <br>
@@ -30,7 +31,9 @@ include('../inc/database.php');
 
 </div>
 
+<div class="fixed-bottom">
 <?php
 //footer
 include('admin_footer.php');
 ?>
+</div>

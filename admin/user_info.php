@@ -32,6 +32,7 @@ $totalPages = $numRows / $rpp;
 /* $sql2="SELECT * FROM user ORDER BY u_id LIMIT $start, $rpp";
 $query2=$conn->query($sql2); */
 ?>
+<title>User Info</title>
 
 <div class="container text-light">
     <br>
@@ -55,24 +56,23 @@ $query2=$conn->query($sql2); */
     <br>
     <form class="row g-2" method="POST">
         <div class="col-5">
-            <input type="text" class="form-control" placeholder="Search here" name="search">
+            <input type="text" class="form-control" placeholder="Search name or username" name="search">
         </div>
         <div class="col-auto">
             <div class="btn-group" role="group">
                 <input type="submit" class="btn btn-info mb-3 shadow" name="submit" value="Search">
-                <a href="user_info.php?page=1" class="btn btn-secondary mb-3 shadow">Refresh</a>
+                <a href="user_info.php?page=1" class="btn btn-secondary mb-3 shadow">Show All</a>
             </div>
         </div>
     </form>
     <span>Page <?php echo $_GET['page']?></span>
-    <div class="table-responsive table-scroll">
+    <div class="table-responsive table-scroll" style="max-height: 700px;">
         <table class="table table-dark table-striped text-light shadow table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>No</th>
+                    <th>Staff ID</th>
                     <th>Name</th>
                     <th>Username</th>
-                    <th>Staff ID</th>
                     <th>Access Level</th>
                     <th>Configuration</th>
                 </tr>
@@ -101,7 +101,7 @@ $query2=$conn->query($sql2); */
                 <tr>
                     <td>
                         <?php
-                        echo $no;
+                        echo $row['u_id'];
                         ?>
                     </td>
                     <td>
@@ -115,18 +115,18 @@ $query2=$conn->query($sql2); */
                         ?>
                     </td>
                     <td>
-                        <?php 
-                        echo $row['u_id'];
-                        ?>
-                    </td>
-                    <td>
                         <?php
                         echo $access[$level];
                         ?>
                     </td>
                     <td>
+                        <?php if ($level == 2): ?>
                         <a href="user_edit.php?id=<?php echo $row['u_id'] ?>" class="btn btn-sm btn-success bi bi-pencil-square" title="Edit"></a>
                         <a href="javascript:void(0)" onclick="delete_data('user_delete.php?id=<?php echo $row['u_id']?>')" class="btn btn-sm btn-danger bi bi-trash" title="Delete"></a>
+                        <?php else: ?>
+                        <a href="user_edit.php?id=<?php echo $row['u_id'] ?>" class="btn btn-sm btn-success bi bi-pencil-square disabled" title="Edit"></a>
+                        <a href="javascript:void(0)" onclick="delete_data('user_delete.php?id=<?php echo $row['u_id']?>')" class="btn btn-sm btn-danger bi bi-trash disabled" title="Delete"></a>
+                        <?php endif; ?>
                     </td>
                 </tr>
 

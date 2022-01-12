@@ -5,31 +5,31 @@ $quizid = $_POST['id'];
 $type = $_POST['type'];
 
 if ($_POST['iscorrect1'] == '') {
-    $answer1 = 0;
+    $answer1 = 2;
 } else {
     $answer1 = 1;
 }
 
 if ($_POST['iscorrect2'] == '') {
-    $answer2 = 0;
+    $answer2 = 2;
 } else {
     $answer2 = 1;
 }
 
 if ($_POST['iscorrect3'] == '') {
-    $answer3 = 0;
+    $answer3 = 2;
 } else {
     $answer3 = 1;
 }
 
 if ($_POST['iscorrect4'] == '') {
-    $answer4 = 0;
+    $answer4 = 2;
 } else {
     $answer4 = 1;
 }
 
 if ($_POST['iscorrect5'] == '') {
-    $answer5 = 0;
+    $answer5 = 2;
 } else {
     $answer5 = 1;
 }

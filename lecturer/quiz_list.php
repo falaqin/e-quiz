@@ -39,7 +39,7 @@ $sql2="SELECT * FROM quiz_list WHERE u_id = $lecid ORDER BY id ASC LIMIT $start,
 //run query
 $query2=$conn->query($sql2);
 ?>
-
+<title>Quiz List</title>
 <style>
     .form-group
     {
@@ -78,12 +78,12 @@ $query2=$conn->query($sql2);
 
                         <div class="form-group">
                             <label for="timer">Timer in minutes</label>
-                            <input type="number" name="timer" min="5" max="15" class="form-control" required>
+                            <input type="number" name="timer" min="5" max="30" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                             <label for="pw">Unique Key</label>
-                            <input type="text" name="pw" class="form-control" required>
+                            <input type="password" name="pw" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
@@ -113,7 +113,7 @@ $query2=$conn->query($sql2);
                     <th>Title Quiz</th>
                     <th>Total questions</th>
                     <th>Created By</th>
-                    <th>Unique Key</th>
+                    <th>Time to Answer</th>
                     <th>Status</th>
                     <th>Configuration</th>
                 </tr>
@@ -149,10 +149,8 @@ $query2=$conn->query($sql2);
                         echo $row_name['user_name'];
                         ?>
                     </td>
-
-                    <td>
-                        <?php echo $row['quiz_pw']; ?>
-                    </td>
+                    
+                    <td><?php echo $row['timer'] . " Minutes" ?></td>
 
                     <td>
                         <a href="quiz_activate.php?id=<?php echo $row['id'] ?>&act=<?php echo $row['is_active'] ?>" class="btn btn-sm btn-warning"><?php echo $active[$row['is_active']] ?></a>
@@ -190,6 +188,8 @@ $query2=$conn->query($sql2);
     <br>
 </div>
 
+<div class="fixed-bottom">
 <?php
 include("lecturer_footer.php");
 ?>
+</div>

@@ -1,8 +1,8 @@
 <footer class="footer mt-auto py-3 bg-light">
   <div class="container">
-    <span class="text-muted">mypsmzaquiz | E-QUIZ</span>
-      <p>System is created for PSMZA. All rights to PSMZA</p>
-      <p>Falaqin - Adib - Ainn</p>
+    <span class="text-muted">mypsmzaquiz | E-QUIZ - Make it Easy</span>
+        <p>System is developed for PSMZA. All rights to JPA / PSMZA</p>
+        <p>Falaqin - Adib - Ain</p>
   </div>
 </footer>
 

@@ -18,19 +18,23 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
+<title>Quiz Unique Key</title>
 
 <div class="test">
     <div class="login-box">
         <form action="" method="post">
             <h1><?php echo $checkUnique['title']?></h1>
+            <br>
             <div class="card shadow">
-                <div class="card-header"><h3 style="color: red;">WARNING</h3></div>
+                <div class="card-header"><h2 style="color: red;"><b>Warning</b></h2></div>
                 <div class="card-body">
                     <p>
-                        If you <b>navigate to previous page OR refresh</b> while answering the quiz, you can no longer participate in the test, and <b>your marks will be 0</b>.
+                        If you <b>navigate to previous page OR refresh</b> while answering the quiz, you can no longer participate in the test, and <b style="color: red;">your marks will be 0</b>.
                     </p>
                 </div>
             </div>
+            <br>
+            <div class="alert alert-primary shadow-sm">A <b>unique key</b> is given by the lecturers for the students to key in inside the textbox below, so they can answer the question.</div>
             <br>
             <div class="form-group">
                     <?php 

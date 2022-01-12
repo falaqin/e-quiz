@@ -11,7 +11,7 @@ $sqlClass = "SELECT * FROM class WHERE class_id = $id";
 $queryClass = $conn->query($sqlClass);
 $result = mysqli_fetch_assoc($queryClass);
 ?>
-
+<title>Edit Class Form</title>
 <div class="container">
     <br>
     <h2>
@@ -31,7 +31,9 @@ $result = mysqli_fetch_assoc($queryClass);
     </form>
 </div>
 
+<div class="fixed-bottom">
 <?php
 //footer
 include('lecturer_footer.php');
 ?>
+</div>

@@ -28,6 +28,7 @@ $scoreIDquery = $conn->query($scoreID_SQL);
 $call_scoreID = mysqli_fetch_assoc($scoreIDquery);
 
 ?>
+<title>Quiz Sheet</title>
 
 <div class="container">
     <br>
@@ -47,7 +48,7 @@ $call_scoreID = mysqli_fetch_assoc($scoreIDquery);
         <?php if ($callQuestion['question_type'] == 1) { ?>
             <div class="card shadow">
                 <?php if ($callQuestion['question_img'] != '') {
-                    ?> <img src="../uploads/<?php echo $callQuestion['question_img']; ?>" class="card-img-top center" alt="quiz image" style="max-width: 300px;"> <hr> <?php
+                    ?> <img src="../uploads/<?php echo $callQuestion['question_img']; ?>" class="card-img-top center" alt="quiz image" style="max-width: 600px;"> <hr> <?php
                 } ?>
                 <div class="card-header text-center">
                     <?php
@@ -93,7 +94,7 @@ $call_scoreID = mysqli_fetch_assoc($scoreIDquery);
                     while ($callOption = mysqli_fetch_assoc($queryOption)):
                     ?>
                     <input type="checkbox" name="answer<?php echo $questionID?>[]" class="form-check-input" value="<?php echo $callOption['is_right'] ?>">
-                    <img src="../uploads/<?php echo $callOption['option_img'] ?>" alt="<?php echo $callOption['option_img'] ?>" style="max-width: 100px;">
+                    <img src="../uploads/<?php echo $callOption['option_img'] ?>" alt="<?php echo $callOption['option_img'] ?>" style="max-width: 200px;">
 
                     <br>
                     <?php
@@ -108,7 +109,7 @@ $call_scoreID = mysqli_fetch_assoc($scoreIDquery);
             ?>
             <div class="card shadow">
                 <?php if ($callQuestion['question_img'] != '') {
-                    ?> <img src="../uploads/<?php echo $callQuestion['question_img']; ?>" class="card-img-top center" alt="quiz image" style="max-width: 300px;"> <hr> <?php
+                    ?> <img src="../uploads/<?php echo $callQuestion['question_img']; ?>" class="card-img-top center" alt="quiz image" style="max-width: 600px;"> <hr> <?php
                 } ?>
                 <div class="card-header text-center">
                     <?php

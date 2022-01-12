@@ -29,7 +29,7 @@ while ($result=$class->fetch_assoc()) {
 }
 
 ?>
-
+<title>Student Edit Form</title>
 <div class="container">
     <br>
     <h2>
@@ -94,7 +94,9 @@ while ($result=$class->fetch_assoc()) {
     }
 </style>
 
+<div class="fixed-bottom">
 <?php
 //Import footer file
 include('lecturer_footer.php');
 ?>
+</div>

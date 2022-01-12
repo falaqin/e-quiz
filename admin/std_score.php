@@ -16,14 +16,15 @@ $queryMarks = $conn->query($sqlMarks);
 $sqlMarksTable = "SELECT sc.std_points, sc.total_points, s.std_matric, s.std_name FROM student_quiz sq JOIN student_score sc, student s WHERE sq.quiz_id = sc.quiz_id AND s.std_id = sc.std_id AND sq.class_id = s.class_id AND sq.class_id = $class AND sq.quiz_id = $id";
 $queryMarksTable = $conn->query($sqlMarksTable);
 ?>
+<title><?php echo $quizTitle ?> Results</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <br>
 <div class="container">
     <div class="card shadow">
         <div class="card-body">
-            <h5 class="card-title bi bi-pencil-square"> Results for <?php echo $quizTitle ?> <a href="reports.php" class="btn btn-sm btn-secondary shadow">Back</a></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Table and graph provided.</h6>
+            <h5 class="card-title bi bi-pencil-square"> Results for <?php echo $quizTitle ?> <br> <a href="reports.php" class="btn btn-sm btn-secondary shadow">Back</a> <a href="quiz_table_pdf.php?class=<?php echo $class ?>&id=<?php echo $id ?>" class="btn btn-sm btn-primary shadow">Download PDF</a></h5>
             <p class="card-text">The bar graph belows show the amount of marks students visually.</p>
+            <div class="alert alert-primary">Protip: You can also download the graph by right clicking and save as image, or touch and hold the graph if you are using a touchscreen device.</div>
             
             <div class="mask d-flex align-items-center h-100">
                 <div class="container">
@@ -38,6 +39,7 @@ $queryMarksTable = $conn->query($sqlMarksTable);
             </div>
             <br>
             <p class="card-text">Table for students marks in detail with name.</p>
+            <div class="alert alert-danger">If the students' total mark is 0, it means they have broken the rules, which is either to not refresh the quiz sheet or navigate to previous page.</div>
             <section class="intro">
                 <div>
                     <div class="mask d-flex align-items-center h-100">
@@ -79,7 +81,6 @@ $queryMarksTable = $conn->query($sqlMarksTable);
                 </div>
             </section>
             <br>
-            <a href="quiz_table_pdf.php?class=<?php echo $class ?>&id=<?php echo $id ?>" class="btn btn-sm btn-primary shadow">Download PDF</a>
         </div>
     </div>
 </div>

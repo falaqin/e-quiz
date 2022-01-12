@@ -6,7 +6,8 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>E-QUIZ System</title>
+        <link rel="icon" href="assets/logo_equiz_no_text_smallest.png">  
+        <title>E-QUIZ Student Login</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -58,11 +59,11 @@ session_start();
                 <img src="assets/logo_equiz_edit.png" alt="" style="width: 200px;">
                 <form action="" method="post">
                     <div class="form-group">
-                        <input type="text" name="user" class="form-control" placeholder="Username" value="">
+                        <input type="text" name="user" class="form-control" placeholder="Matric Number" value="">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="pass" class="form-control" placeholder="Password" value="">
+                        <input type="password" name="pass" class="form-control" placeholder="IC Number" value="">
                     </div>
 
                     <input type="submit" value="Login" name="submit" class="btn btn-primary">

@@ -11,6 +11,7 @@ $callQuiz = mysqli_fetch_assoc($query);
 $active[0] = 'Inactive';
 $active[1] = 'Active';
 ?>
+<title>Quiz View</title>
 <br>
 <div class="container">
     <div class="card shadow">
@@ -62,7 +63,7 @@ $active[1] = 'Active';
                 <h5><?php echo $active[$callQuiz['is_active']] ?></h5>
             </div>
             <div class="mb-3">
-                <label class="form-label">Last Updated</label>
+                <label class="form-label">Time/Date Created</label>
                 <h5><?php echo $callQuiz['date_updated']?></h5>
             </div>
             <p>

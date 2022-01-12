@@ -20,6 +20,7 @@ $call_quiz=mysqli_fetch_assoc($query_quiz);
 $call_lecturer=mysqli_fetch_assoc($query_lecturer);
 $call_student=mysqli_fetch_assoc($query_student);
 ?>
+<title>Admin Dashboard</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
@@ -55,7 +56,11 @@ $call_student=mysqli_fetch_assoc($query_student);
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>Administrators can have it easy.</h1>
-            <p>CSV files can be imported into the database!</p>
+            <p>
+                CSV files can be imported into the database! <br>
+                <a href="user_info.php?page=1" class="btn btn-outline-light">User</a>
+                <a href="student_info.php?page=1" class="btn btn-outline-light">Student</a>
+            </p>
           </div>
         </div>
       </div>
@@ -107,7 +112,8 @@ $call_student=mysqli_fetch_assoc($query_student);
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $call_quiz['totalquiz'] . " total quizzes" ?></h5>
                     <p class="card-text">has been created by lecturers</p>
-                </div>
+                    <a href="reports.php" class="btn btn-outline-secondary">See Quiz</a>
+                    </div>
             </div>
         </div>
 

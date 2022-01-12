@@ -11,7 +11,7 @@ $sqlClass = "SELECT * FROM class WHERE class_id = $id";
 $queryClass = $conn->query($sqlClass);
 $result = mysqli_fetch_assoc($queryClass);
 ?>
-
+<title>Edit Class Form</title>
 <div class="container bg-gradient text-light">
     <br>
     <h2>
