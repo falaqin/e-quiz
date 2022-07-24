@@ -8,10 +8,6 @@ include('../inc/database.php');
 //get user id
 $lecid = $_SESSION['user_id'];
 
-if ($_GET['page'] == '') {
-    $_GET['page'] = 1;
-}
-
 $rpp = 10;
 //check set page
 isset($_GET['page']) ? $page = $_GET['page'] : $page = 0;
@@ -104,7 +100,7 @@ $query2=$conn->query($sql2);
             </div>
         </div>
     </div>
-    <span>Page <?php echo $_GET['page']?></span>
+    <span><?php if(isset($_GET['page'])) { echo 'Page ', $_GET['page']; } else { echo 'Page 1'; } ?></span>
     <div class="table-responsive table-scroll">
         <table class="table table-light table-striped shadow table-hover table-bordered">
             <thead>

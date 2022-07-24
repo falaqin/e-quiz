@@ -1,8 +1,9 @@
 <?php
-include('inc/database.php');
+include('../inc/database.php');
 include('std_header.php');
 
-$quizSQL = "SELECT s.std_id, s.class_id, ql.id AS quiz_id, sq.id, ql.title, ql.quiz_pw, u.user_name, ql.is_active, ql.timer FROM student_quiz sq INNER JOIN student s, quiz_list ql, user u
+$quizSQL = "SELECT s.std_id, s.class_id, ql.id AS quiz_id, sq.id, ql.title, ql.quiz_pw, u.user_name, ql.is_active, 
+ql.timer FROM student_quiz sq INNER JOIN student s, quiz_list ql, user u
 WHERE sq.class_id = $classID 
 AND s.std_id = $SQLstd_id 
 AND ql.id = sq.quiz_id 
@@ -58,12 +59,22 @@ $quizQuery = $conn->query($quizSQL);
                             $quizid1 = $callQuiz['quiz_id'];
                             $sqlToCheckAvail = "SELECT sc.std_points FROM student_score sc LEFT JOIN student_quiz sq ON sc.quiz_id = sq.quiz_id WHERE sc.std_id = $SQLstd_id AND sc.quiz_id = $quizid1";
                             $queryAvail = $conn->query($sqlToCheckAvail);
-                            $callAvail = mysqli_fetch_assoc($queryAvail);
 
-                            if ($callAvail['std_points'] == '') { ?>
+                            // check if query return true or false boolean
+                            $queryReturnStatus = mysqli_connect_errno($queryAvail);
+
+                            if ($queryReturnStatus) {
+                                $callAvail = mysqli_fetch_assoc($queryAvail);
+                            }
+
+                            if (isset($callAvail['std_points'])) {
+                                if ($callAvail['std_points'] == '') { ?>
+                                    <a href="quiz_check_unique.php?quizid=<?php echo $callQuiz['quiz_id'] ?>" class="btn btn-sm btn-success">Start</a>
+                                <?php } else { ?>
+                                    <a href="quiz_check_unique.php?quizid=<?php echo $callQuiz['quiz_id'] ?>" class="btn btn-sm btn-danger disabled">Answered</a>
+                                <?php }
+                            } else { ?>
                                 <a href="quiz_check_unique.php?quizid=<?php echo $callQuiz['quiz_id'] ?>" class="btn btn-sm btn-success">Start</a>
-                            <?php } else { ?>
-                                <a href="quiz_check_unique.php?quizid=<?php echo $callQuiz['quiz_id'] ?>" class="btn btn-sm btn-danger disabled">Answered</a>
                             <?php }
                         }
                         ?>

@@ -1,5 +1,5 @@
 <?php
-include('inc/database.php');
+include('../inc/database.php');
 include('std_header_quizsheet.php');
 $quizID = $_GET['quizid'];
 
@@ -14,14 +14,17 @@ $checkingSQL = "SELECT * FROM student_score sc WHERE sc.std_id = $SQLstd_id AND 
 $queryCheck = $conn->query($checkingSQL);
 $callChecking = mysqli_fetch_assoc($queryCheck);
 
-if ($callChecking['id'] == '') {
-    $QueryFor_stdScore = "INSERT INTO student_score (quiz_id, std_id, std_points, total_points)
+if (isset($callChecking['id'])) {
+    if ($callChecking['id'] == '') {
+        $QueryFor_stdScore = "INSERT INTO student_score (quiz_id, std_id, std_points, total_points)
     VALUES ('$quizID','$SQLstd_id','0','0');";
-    $RunQuery_stdScore = mysqli_query($conn, $QueryFor_stdScore);
-    
-} else {
-    header("Location:index.php");
+        $RunQuery_stdScore = mysqli_query($conn, $QueryFor_stdScore);
+
+    } else {
+        header("Location:index.php");
+    }
 }
+
 
 $scoreID_SQL = "SELECT * FROM student_score WHERE std_id = '$SQLstd_id' AND quiz_id = $quizID";
 $scoreIDquery = $conn->query($scoreID_SQL);

@@ -1,5 +1,5 @@
 <?php
-include('inc/database.php');
+include('../inc/database.php');
 include('std_header.php');
 
 $quizID = $_POST['quizid'];

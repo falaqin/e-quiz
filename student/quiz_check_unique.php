@@ -1,5 +1,5 @@
 <?php
-include('inc/database.php');
+include('../inc/database.php');
 include('std_header.php');
 
 $quizID = $_GET['quizid'];
@@ -39,18 +39,25 @@ if (isset($_POST['submit'])) {
             <div class="form-group">
                     <?php 
                         $sqlToCheckAvail = "SELECT sc.std_points FROM student_score sc LEFT JOIN student_quiz sq ON sc.quiz_id = sq.quiz_id WHERE sc.std_id = $SQLstd_id AND sc.quiz_id = $quizID";
-                        $queryAvail = $conn->query($sqlToCheckAvail);
-                        $callAvail = mysqli_fetch_assoc($queryAvail);
+                        $queryReturnStatus = mysqli_connect_errno($sqlToCheckAvail);
 
-                        if ($callAvail['std_points'] == '') { ?>
-                            <input type="password" name="key" class="form-control" placeholder="Unique Key" value="">
-                        <?php } else { ?>
-                            <input type="password" name="key" class="form-control" placeholder="You have answered the quiz." value="" disabled>
-                        <?php }
+                        if ($queryReturnStatus) {
+                            $callAvail = mysqli_fetch_assoc($sqlToCheckAvail);
+                        }
+
+                        if (isset($callAvail['std_points'])) {
+                            if ($callAvail['std_points'] == '') { ?>
+                                <input type="password" name="key" class="form-control" placeholder="Unique Key" value="">
+                            <?php } else { ?>
+                                <input type="password" name="key" class="form-control" placeholder="You have answered the quiz." value="" disabled>
+                            <?php }
+                        } else {
+                            ?> <input type="password" name="key" class="form-control" placeholder="Unique Key" value=""> <?php
+                        }
                     ?>
                 
                 <span class="error"><?php echo $result ?></span><br>
-                <input type="hidden" name="quizid" value="<?php $quizID ?>">
+                <input type="hidden" name="quizid" value="<?php $_GET['quizid'] ?>">
             </div>
             
             <button type="button" class="btn btn-dark" id="btnback">Back</button>
