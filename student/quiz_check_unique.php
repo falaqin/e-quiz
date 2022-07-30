@@ -3,13 +3,15 @@ include('../inc/database.php');
 include('std_header.php');
 
 $quizID = $_GET['quizid'];
-$sqlCheck = "SELECT s.std_id, ql.id, ql.title, ql.quiz_pw FROM student s, quiz_list ql, student_quiz sq WHERE s.std_id = $SQLstd_id AND s.class_id = sq.class_id AND ql.id = $quizID AND ql.id = sq.quiz_id";
+$sqlCheck = "SELECT s.std_id, ql.id, ql.title, ql.quiz_pw, ql.enable_retake_quiz as retake FROM student s, quiz_list ql, student_quiz sq WHERE s.std_id = $SQLstd_id AND s.class_id = sq.class_id AND ql.id = $quizID AND ql.id = sq.quiz_id";
 $queryCheck = $conn->query($sqlCheck);
 $checkUnique=mysqli_fetch_assoc($queryCheck);
-
+$enableRetake = $checkUnique['retake'];
+$result = '';
 if (isset($_POST['submit'])) {
     $key = $checkUnique['quiz_pw'];
     $keyInput = $_POST['key'];
+    echo $key;
 
     if ($keyInput == $key) {
         header("Location:quiz_sheet.php?quizid=$quizID");
@@ -34,30 +36,29 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
             <br>
-            <div class="alert alert-primary shadow-sm">A <b>unique key</b> is given by the lecturers for the students to key in inside the textbox below, so they can answer the question.</div>
+            <div class="alert alert-primary shadow-sm">A <b>unique key</b> is given by the teachers for the students to key in inside the textbox below, so they can answer the question.</div>
             <br>
             <div class="form-group">
                     <?php 
                         $sqlToCheckAvail = "SELECT sc.std_points FROM student_score sc LEFT JOIN student_quiz sq ON sc.quiz_id = sq.quiz_id WHERE sc.std_id = $SQLstd_id AND sc.quiz_id = $quizID";
-                        $queryReturnStatus = mysqli_connect_errno($sqlToCheckAvail);
-
-                        if ($queryReturnStatus) {
-                            $callAvail = mysqli_fetch_assoc($sqlToCheckAvail);
-                        }
+                        $queryAvail = $conn->query($sqlToCheckAvail);
+                        $callAvail = mysqli_fetch_assoc($queryAvail);
 
                         if (isset($callAvail['std_points'])) {
                             if ($callAvail['std_points'] == '') { ?>
                                 <input type="password" name="key" class="form-control" placeholder="Unique Key" value="">
-                            <?php } else { ?>
-                                <input type="password" name="key" class="form-control" placeholder="You have answered the quiz." value="" disabled>
-                            <?php }
+                            <?php } else if (!empty($callAvail['std_points']) and $enableRetake == 0) { ?>
+                                <input type="password" name="key" class="form-control" placeholder="You have taken the quiz" value="" disabled>
+                            <?php } else if ($enableRetake) {
+                                ?> <input type="password" name="key" class="form-control" placeholder="Unique Key" value=""> <?php
+                            }
                         } else {
                             ?> <input type="password" name="key" class="form-control" placeholder="Unique Key" value=""> <?php
                         }
                     ?>
                 
                 <span class="error"><?php echo $result ?></span><br>
-                <input type="hidden" name="quizid" value="<?php $_GET['quizid'] ?>">
+                <input type="hidden" name="quizid" value="<?php $quizID ?>">
             </div>
             
             <button type="button" class="btn btn-dark" id="btnback">Back</button>

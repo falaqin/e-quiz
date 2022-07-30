@@ -10,20 +10,23 @@ $scoreID = $_POST['student_score_ID'];
 $sqlPoint = "SELECT ql.points FROM quiz_list ql WHERE ql.id = $quizID";
 $queryPoint = $conn->query($sqlPoint);
 $callPoint = mysqli_fetch_assoc($queryPoint);
-$point = $callPoint['points'];
-
+$point = intval($callPoint['points']);
 $totalQuestion = count($questionID_test);
 $answerForDB = array();
 
+// declare outside to prevent loop fuck up the total numbers
+$incorrect = 0;
+$actualMark = 0;
+$total = 0;
+$correct = 0;
+$unanswered = 0;
 
 for ($i=0; $i < $totalQuestion; $i++) { 
     $whichQuestion = $questionID_test[$i];
     $answerArray = $_POST["answer" . $questionID_test[$i]];
     /* print_r($answerArray); */
     $type = $_POST["question_type"];
-
     if ($type[$i] == 1) {
-        
 
         if (empty($answerArray)) {
             $unanswered++;
@@ -32,7 +35,7 @@ for ($i=0; $i < $totalQuestion; $i++) {
             $answerForDB[$i] = $answer;
         } else {
             $answer = $answerArray[0];
-
+            
             if ($answer == 0) {
                 $incorrect++;
                 $actualMark += $point;
@@ -102,7 +105,7 @@ for ($i=0; $i < $totalQuestion; $i++) {
             if ($answer == $Type3TotalFromDB) {
                 $correct++;
                 $rightanswer = 1 * $point;
-                $total += $rightanswer;
+                $total += (int) $rightanswer;
                 $actualMark += $point;
                 $answerForDB[$i] = 1;
             } elseif ($answer <> $Type3TotalFromDB) {
@@ -115,7 +118,6 @@ for ($i=0; $i < $totalQuestion; $i++) {
         
     }
 }
-
 if ($total == '') {
     $total = 0;
 }

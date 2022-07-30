@@ -11,6 +11,6 @@ $sql="DELETE FROM user WHERE u_id='$id'";
 if($conn->query($sql))
 {
     //redirect to user
-    header("Location:user_info.php");
+    header("Location:user_info.php?page=1");
 }
 ?>

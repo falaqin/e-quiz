@@ -18,7 +18,7 @@ WHERE std_id='$id'";
 if($conn->query($sql))
 {
     //redirect to userphp page
-    header("Location:student_info.php");
+    header("Location:student_info.php?page=1");
 }
 else
 {

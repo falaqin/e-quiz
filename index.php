@@ -45,7 +45,7 @@
         <div class="container">
             <div class="row">
             <div class="col">
-                <h1>Your New<br>Quiz System</h1>
+                <h1>Welcome to<br>E-Quiz System</h1>
                 <p>Created from a single passionate developer to bring the best quiz system to create a better solution for the students studying from home, or anywhere in the world.</p>
                 <button type="button" class="btn btn-dark btn-large" id="btnlogin">Login</button>
                 <script type="text/javascript">
@@ -65,7 +65,7 @@
                     <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Flexibility</h5>
-                        <p class="card-text">Gives both students and lecturers complete flexibility in creating and answering quizzes.</p>
+                        <p class="card-text">Gives both students and teachers complete flexibility in creating and answering quizzes.</p>
                     </div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
             </div>
             <div class="col text-col">
                 <h1>About Us</h1>
-                <p>As a developer, we are motivated and striving to create a completely flexible and a good system environment for the lecturers and students to work with.</p>
+                <p>As a developer, we are motivated and striving to create a completely flexible and a good system environment for the teachers and students to work with.</p>
             </div>
             </div>
         </div>
@@ -114,10 +114,10 @@
         <div class="container">
             <div class="row align-items-center">
             <div class="col">
-                <h1>Developed For Jabatan Pendidikan Am</h1>
-                <h5>E-Quiz | Make it Easy.</h5>
-                <p>System is developed for PSMZA. All rights to JPA / PSMZA</p>
-                <p>Falaqin - Adib - Ain</p>
+                <h1>Developed For Jabatan Pendidikan Negeri Sembilan</h1>
+                <h5>E-Quiz</h5>
+                <p>All rights to JPNS</p>
+                <p>Anas Nordin</p>
             </div>
             </div>
         </div>

@@ -4,6 +4,10 @@ include('lecturer_header.php');
 
 //Import database connection
 include('../inc/database.php');
+if ($_GET['page'] == '') {
+    $_GET['page'] = 1;
+}
+
 
 $rpp = 10;
 //check set page
@@ -61,7 +65,7 @@ $totalPages = $numRows / $rpp;
             <a href="student_info.php?page=1" class="btn btn-secondary mb-3">Show All</a>
         </div>
     </form>
-    <span><?php if(isset($_GET['page'])) { echo 'Page ', $_GET['page']; } else { echo 'Page 1'; } ?></span>
+    <span>Page <?php echo $_GET['page']?></span>
 
     <div class="table-responsive table-scroll"style="max-height: 700px;">
         <table class="table table-light table-striped shadow table-hover table-bordered">
@@ -69,7 +73,7 @@ $totalPages = $numRows / $rpp;
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Matric No.</th>
+                    <th>IC No.</th>
                     <th>Session</th> 
                     <th>Class</th>
                     <th>Configuration</th>

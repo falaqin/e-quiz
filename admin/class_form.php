@@ -10,7 +10,7 @@ include('../inc/database.php');
 <div class="container text-light">
     <br>
     <h2 class="bi bi-folder">
-        Class Form <a href="class_info.php" class="btn btn-sm btn-secondary">Back</a>
+        Class Form <a href="class_info.php?page=1" class="btn btn-sm btn-secondary">Back</a>
     </h2>
     
     <div class="container text-light row">

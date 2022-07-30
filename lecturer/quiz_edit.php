@@ -42,6 +42,11 @@ $res=mysqli_fetch_assoc($query);
                 <option value="1"<?php if($res['is_active']==1) {echo 'selected=selected"';} ?>>Active</option>
             </select>
 
+            <div class="form-check mt-2 mb-3">
+                <input class="form-check-input" type="checkbox" name="redo" value="1" <?php if($res['enable_retake_quiz'] == 1) { echo 'checked="checked"'; } ?>>
+                <label class="form-check-label" for="redo">Enable Retake Quiz</label>
+            </div>
+
             <label for="pass">Unique Key (for students to enter)</label>
             <input type="password" name="pass" class="form-control" value="<?php echo $res['quiz_pw'] ?>">
         </div>

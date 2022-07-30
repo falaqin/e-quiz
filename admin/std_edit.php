@@ -33,7 +33,7 @@ while ($result=$class->fetch_assoc()) {
 <div class="container bg-gradient text-light">
     <br>
     <h2>
-        Student Form <a href="student_info.php" class="btn btn-sm btn-secondary">Back</a>
+        Student Form <a href="student_info.php?page=1" class="btn btn-sm btn-secondary">Back</a>
     </h2>
 
     <form method="post" action="std_edit_submit.php">

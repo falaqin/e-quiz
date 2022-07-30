@@ -22,7 +22,7 @@ $rslt=mysqli_fetch_assoc($query_check);
 <div class="container bg-gradient text-light">
     <br>
     <h2>
-        User Form <a href="user_info.php" class="btn btn-sm btn-secondary">Back</a>
+        User Form <a href="user_info.php?page=1" class="btn btn-sm btn-secondary">Back</a>
     </h2>
 
     <form method="post" action="user_edit_submit.php">

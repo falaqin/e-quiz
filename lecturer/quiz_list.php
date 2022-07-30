@@ -8,6 +8,10 @@ include('../inc/database.php');
 //get user id
 $lecid = $_SESSION['user_id'];
 
+if ($_GET['page'] == '') {
+    $_GET['page'] = 1;
+}
+
 $rpp = 10;
 //check set page
 isset($_GET['page']) ? $page = $_GET['page'] : $page = 0;
@@ -81,6 +85,11 @@ $query2=$conn->query($sql2);
                             <label for="pw">Unique Key</label>
                             <input type="password" name="pw" class="form-control" required>
                         </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="redo" value="1">
+                            <label class="form-check-label" for="redo">Enable Retake Quiz</label>
+                        </div>
                         
                         <div class="form-group">
                             <input type="hidden" name="lecturer" value="<?php echo $lecid ?>">
@@ -100,7 +109,7 @@ $query2=$conn->query($sql2);
             </div>
         </div>
     </div>
-    <span><?php if(isset($_GET['page'])) { echo 'Page ', $_GET['page']; } else { echo 'Page 1'; } ?></span>
+    <span>Page <?php echo $_GET['page']?></span>
     <div class="table-responsive table-scroll">
         <table class="table table-light table-striped shadow table-hover table-bordered">
             <thead>

@@ -28,7 +28,7 @@ $loopinput = '<div class="card text-dark col-md-4 d-flex shadow" style="width: i
         <select name="access_level[]" id="access_level" class="form-control" required>
             <option value="">Please Choose</option>
             <option value="1">Admin</option>
-            <option value="2">Lecturer</option>
+            <option value="2">Teacher</option>
         </select>
     </div>
 </div>
@@ -65,7 +65,7 @@ $loopinput = '<div class="card text-dark col-md-4 d-flex shadow" style="width: i
                         <select name="access_level[]" id="access_level" class="form-control" required>
                             <option value="">Please Choose</option>
                             <option value="1">Admin</option>
-                            <option value="2">Lecturer</option>
+                            <option value="2">Teacher</option>
                         </select>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ $loopinput = '<div class="card text-dark col-md-4 d-flex shadow" style="width: i
             } ?>
             <div class="card text-dark shadow">
                 <div class="card-body">
-                    <a href="user_info.php" class="btn btn-secondary">Back</a>
+                    <a href="user_info.php?page=1" class="btn btn-secondary">Back</a>
                     <input type="submit" name="save" id="" class="btn btn-primary">
                 </div>
             </div>

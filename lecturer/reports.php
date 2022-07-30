@@ -58,7 +58,7 @@ $QueryQBOC = $conn->query($SQLforQuizBasedOnClass);
                             $queryDisableIfNoAnswer = $conn->query($SQL_DisableIfNoAnswer);
                             $callDisable = mysqli_fetch_assoc($queryDisableIfNoAnswer);
 
-                            if ($callDisable['std_points'] == ''): ?>
+                            if (!isset($callDisable['std_points'])): ?>
                             <a href="std_score.php?id=<?php echo $callQBOC['id'] ?>&class=<?php echo $callQBOC['class_id'] ?>" class="btn btn-sm btn-danger bi bi-eye-slash disabled shadow"></a>
                             <?php else: ?>
                                 <a href="std_score.php?id=<?php echo $callQBOC['id'] ?>&class=<?php echo $callQBOC['class_id'] ?>" class="btn btn-sm btn-info bi bi-eye shadow"></a>

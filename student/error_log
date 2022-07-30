@@ -2052,3 +2052,271 @@
 [12-Jan-2022 07:55:13 UTC] PHP Notice:  Undefined variable: incorrect in /home2/mypsmzaq/public_html/student/quiz_result.php on line 109
 [12-Jan-2022 07:55:13 UTC] PHP Notice:  Undefined index: answer16 in /home2/mypsmzaq/public_html/student/quiz_result.php on line 21
 [12-Jan-2022 07:55:13 UTC] PHP Notice:  Undefined variable: unanswered in /home2/mypsmzaq/public_html/student/quiz_result.php on line 62
+[12-Jan-2022 14:31:23 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 14:31:23 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 14:31:23 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 14:31:44 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 14:31:44 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 14:31:44 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 16:55:15 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 16:55:15 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 16:55:15 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 16:55:34 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 16:55:34 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 16:55:34 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 18:27:16 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 18:27:16 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 18:27:16 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 18:27:20 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 18:27:20 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[12-Jan-2022 18:27:20 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[13-Jan-2022 08:50:51 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[13-Jan-2022 08:50:51 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[13-Jan-2022 08:50:51 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[13-Jan-2022 08:57:07 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[13-Jan-2022 08:57:07 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[13-Jan-2022 08:57:07 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[13-Jan-2022 08:57:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[13-Jan-2022 08:57:09 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[13-Jan-2022 08:57:09 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[13-Jan-2022 08:57:09 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[13-Jan-2022 08:57:09 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[13-Jan-2022 08:57:09 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[13-Jan-2022 08:57:13 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[13-Jan-2022 08:57:13 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[13-Jan-2022 08:57:13 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[13-Jan-2022 08:57:13 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[13-Jan-2022 08:57:13 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[13-Jan-2022 08:57:13 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[13-Jan-2022 08:57:13 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[13-Jan-2022 08:57:13 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[13-Jan-2022 08:57:13 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 17
+[13-Jan-2022 08:57:29 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_result.php on line 2
+[13-Jan-2022 08:57:29 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_result.php on line 2
+[13-Jan-2022 08:57:29 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_result.php on line 2
+[13-Jan-2022 08:57:29 UTC] PHP Notice:  Undefined variable: correct in /home2/mypsmzaq/public_html/student/quiz_result.php on line 41
+[13-Jan-2022 08:57:29 UTC] PHP Notice:  Undefined variable: total in /home2/mypsmzaq/public_html/student/quiz_result.php on line 43
+[13-Jan-2022 08:57:29 UTC] PHP Notice:  Undefined variable: actualMark in /home2/mypsmzaq/public_html/student/quiz_result.php on line 44
+[13-Jan-2022 08:57:29 UTC] PHP Notice:  Undefined variable: incorrect in /home2/mypsmzaq/public_html/student/quiz_result.php on line 109
+[13-Jan-2022 08:57:29 UTC] PHP Notice:  Undefined variable: unanswered in /home2/mypsmzaq/public_html/student/quiz_result.php on line 135
+[13-Jan-2022 09:22:31 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[13-Jan-2022 09:22:31 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[13-Jan-2022 09:22:31 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[13-Jan-2022 09:22:35 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[13-Jan-2022 09:22:35 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[13-Jan-2022 09:22:35 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[15-Jan-2022 10:24:17 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[15-Jan-2022 10:24:17 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[15-Jan-2022 10:24:17 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[15-Jan-2022 10:25:44 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[15-Jan-2022 10:25:44 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[15-Jan-2022 10:25:44 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[15-Jan-2022 10:25:44 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[15-Jan-2022 10:26:28 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[15-Jan-2022 10:26:28 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[15-Jan-2022 10:26:28 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[15-Jan-2022 10:26:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[15-Jan-2022 10:26:28 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[17-Jan-2022 00:53:36 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 00:53:36 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 00:53:36 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 00:53:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[17-Jan-2022 00:53:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[17-Jan-2022 02:11:48 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:11:48 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:11:48 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:11:48 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[17-Jan-2022 02:11:48 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[17-Jan-2022 02:11:51 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:11:51 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:11:51 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:11:51 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[17-Jan-2022 02:11:51 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[17-Jan-2022 02:11:55 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:11:55 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:11:55 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:11:55 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[17-Jan-2022 02:11:55 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[17-Jan-2022 02:11:58 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:11:58 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:11:58 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:11:58 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[17-Jan-2022 02:11:58 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[17-Jan-2022 02:12:00 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:12:00 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:12:00 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:12:00 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[17-Jan-2022 02:12:00 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[17-Jan-2022 02:50:04 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:50:04 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:50:04 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:50:04 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[17-Jan-2022 02:50:04 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[17-Jan-2022 02:50:25 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:50:25 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:50:25 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:50:25 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[17-Jan-2022 02:50:25 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[17-Jan-2022 02:50:56 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:50:56 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:50:56 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:50:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[17-Jan-2022 02:50:56 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[17-Jan-2022 02:50:56 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[17-Jan-2022 02:50:56 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[17-Jan-2022 02:50:56 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[17-Jan-2022 02:50:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 17
+[17-Jan-2022 02:51:46 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_result.php on line 2
+[17-Jan-2022 02:51:46 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_result.php on line 2
+[17-Jan-2022 02:51:46 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_result.php on line 2
+[17-Jan-2022 02:51:46 UTC] PHP Notice:  Undefined variable: correct in /home2/mypsmzaq/public_html/student/quiz_result.php on line 41
+[17-Jan-2022 02:51:46 UTC] PHP Notice:  Undefined variable: total in /home2/mypsmzaq/public_html/student/quiz_result.php on line 43
+[17-Jan-2022 02:51:46 UTC] PHP Notice:  Undefined variable: actualMark in /home2/mypsmzaq/public_html/student/quiz_result.php on line 44
+[17-Jan-2022 02:51:46 UTC] PHP Notice:  Undefined variable: incorrect in /home2/mypsmzaq/public_html/student/quiz_result.php on line 37
+[17-Jan-2022 02:51:46 UTC] PHP Notice:  Undefined variable: unanswered in /home2/mypsmzaq/public_html/student/quiz_result.php on line 135
+[17-Jan-2022 02:53:06 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:53:06 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:53:06 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:53:06 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[17-Jan-2022 02:53:06 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[17-Jan-2022 02:53:09 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:53:09 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:53:09 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:53:09 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[17-Jan-2022 02:53:09 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[17-Jan-2022 02:53:13 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:53:13 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:53:13 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:53:13 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[17-Jan-2022 02:53:18 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:53:18 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:53:18 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[17-Jan-2022 02:53:18 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[17-Jan-2022 02:53:18 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[17-Jan-2022 02:53:18 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[17-Jan-2022 02:53:18 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[17-Jan-2022 02:53:18 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[17-Jan-2022 02:53:18 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 17
+[17-Jan-2022 02:53:22 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[17-Jan-2022 02:53:22 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[17-Jan-2022 02:53:22 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[17-Jan-2022 02:53:25 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:53:25 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:53:25 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[17-Jan-2022 02:53:25 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[18-Jan-2022 15:59:58 UTC] PHP Notice:  Undefined variable: SQLstd_id in /home2/mypsmzaq/public_html/student/std_header.php on line 17
+[18-Jan-2022 15:59:58 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home2/mypsmzaq/public_html/student/std_header.php on line 64
+[18-Jan-2022 15:59:58 UTC] PHP Notice:  Undefined variable: SQLstd_id in /home2/mypsmzaq/public_html/student/history.php on line 5
+[18-Jan-2022 15:59:58 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home2/mypsmzaq/public_html/student/history.php on line 33
+[18-Jan-2022 16:00:41 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[18-Jan-2022 16:00:41 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[18-Jan-2022 16:00:41 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[18-Jan-2022 16:00:41 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[27-Jan-2022 02:58:22 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[27-Jan-2022 02:58:22 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[27-Jan-2022 02:58:22 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[27-Jan-2022 02:58:22 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[27-Jan-2022 02:58:22 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[27-Jan-2022 02:58:29 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[27-Jan-2022 02:58:29 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[27-Jan-2022 02:58:29 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[27-Jan-2022 02:58:29 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[27-Jan-2022 02:58:29 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[27-Jan-2022 02:59:06 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[27-Jan-2022 02:59:06 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[27-Jan-2022 02:59:06 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[27-Jan-2022 02:59:06 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[27-Jan-2022 02:59:06 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[27-Jan-2022 02:59:07 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[27-Jan-2022 02:59:07 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[27-Jan-2022 02:59:07 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[27-Jan-2022 02:59:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 17
+[27-Jan-2022 02:59:45 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_result.php on line 2
+[27-Jan-2022 02:59:45 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_result.php on line 2
+[27-Jan-2022 02:59:45 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_result.php on line 2
+[27-Jan-2022 02:59:45 UTC] PHP Notice:  Undefined variable: correct in /home2/mypsmzaq/public_html/student/quiz_result.php on line 41
+[27-Jan-2022 02:59:45 UTC] PHP Notice:  Undefined variable: total in /home2/mypsmzaq/public_html/student/quiz_result.php on line 43
+[27-Jan-2022 02:59:45 UTC] PHP Notice:  Undefined variable: actualMark in /home2/mypsmzaq/public_html/student/quiz_result.php on line 44
+[27-Jan-2022 02:59:45 UTC] PHP Notice:  Undefined variable: incorrect in /home2/mypsmzaq/public_html/student/quiz_result.php on line 131
+[27-Jan-2022 02:59:45 UTC] PHP Notice:  Undefined variable: unanswered in /home2/mypsmzaq/public_html/student/quiz_result.php on line 135
+[27-Jan-2022 03:00:11 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[27-Jan-2022 03:00:11 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[27-Jan-2022 03:00:11 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[27-Jan-2022 03:00:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[03-Feb-2022 14:47:24 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[03-Feb-2022 14:47:24 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[03-Feb-2022 14:47:24 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[03-Feb-2022 14:47:24 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[03-Feb-2022 14:47:24 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[03-Feb-2022 14:47:24 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[03-Feb-2022 14:47:28 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[03-Feb-2022 14:47:28 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[03-Feb-2022 14:47:28 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[03-Feb-2022 14:47:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[03-Feb-2022 14:47:28 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[03-Feb-2022 14:47:36 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[03-Feb-2022 14:47:36 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[03-Feb-2022 14:47:36 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[03-Feb-2022 14:47:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[03-Feb-2022 14:47:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[03-Feb-2022 14:47:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[03-Feb-2022 14:48:32 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[03-Feb-2022 14:48:32 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[03-Feb-2022 14:48:32 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[03-Feb-2022 14:48:32 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[03-Feb-2022 14:48:32 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[03-Feb-2022 14:48:32 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[03-Feb-2022 14:48:33 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[03-Feb-2022 14:48:33 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[03-Feb-2022 14:48:33 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[03-Feb-2022 14:48:33 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[03-Feb-2022 14:48:33 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[03-Feb-2022 14:48:38 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[03-Feb-2022 14:48:38 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[03-Feb-2022 14:48:38 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[03-Feb-2022 14:48:38 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[03-Feb-2022 14:48:38 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[03-Feb-2022 14:48:38 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[03-Feb-2022 14:48:38 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[03-Feb-2022 14:48:38 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 2
+[03-Feb-2022 14:48:38 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_sheet.php on line 17
+[03-Feb-2022 14:48:47 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_result.php on line 2
+[03-Feb-2022 14:48:47 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_result.php on line 2
+[03-Feb-2022 14:48:47 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_result.php on line 2
+[03-Feb-2022 14:48:47 UTC] PHP Notice:  Undefined variable: correct in /home2/mypsmzaq/public_html/student/quiz_result.php on line 41
+[03-Feb-2022 14:48:47 UTC] PHP Notice:  Undefined variable: total in /home2/mypsmzaq/public_html/student/quiz_result.php on line 43
+[03-Feb-2022 14:48:47 UTC] PHP Notice:  Undefined variable: actualMark in /home2/mypsmzaq/public_html/student/quiz_result.php on line 44
+[03-Feb-2022 14:48:47 UTC] PHP Notice:  Undefined variable: incorrect in /home2/mypsmzaq/public_html/student/quiz_result.php on line 131
+[03-Feb-2022 14:48:47 UTC] PHP Notice:  Undefined variable: unanswered in /home2/mypsmzaq/public_html/student/quiz_result.php on line 135
+[03-Feb-2022 14:48:57 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[03-Feb-2022 14:48:57 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[03-Feb-2022 14:48:57 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[03-Feb-2022 14:48:57 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[03-Feb-2022 14:48:57 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[16-Feb-2022 23:10:53 UTC] PHP Notice:  Undefined variable: SQLstd_id in /home2/mypsmzaq/public_html/student/std_header.php on line 17
+[16-Feb-2022 23:10:53 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home2/mypsmzaq/public_html/student/std_header.php on line 64
+[07-Mar-2022 06:22:51 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[07-Mar-2022 06:22:51 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[07-Mar-2022 06:22:51 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[07-Mar-2022 06:22:51 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[07-Mar-2022 06:22:51 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[14-Mar-2022 01:00:12 UTC] PHP Notice:  Undefined variable: SQLstd_id in /home2/mypsmzaq/public_html/student/std_header.php on line 17
+[14-Mar-2022 01:00:12 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home2/mypsmzaq/public_html/student/std_header.php on line 64
+[14-Mar-2022 01:00:34 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[14-Mar-2022 01:00:34 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[14-Mar-2022 01:00:34 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[14-Mar-2022 01:00:34 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[14-Mar-2022 01:00:34 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[14-Mar-2022 01:00:44 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[14-Mar-2022 01:00:44 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[14-Mar-2022 01:00:44 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 2
+[14-Mar-2022 01:00:44 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 45
+[14-Mar-2022 01:00:44 UTC] PHP Notice:  Undefined variable: result in /home2/mypsmzaq/public_html/student/quiz_check_unique.php on line 52
+[26-May-2022 08:11:08 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[26-May-2022 08:11:08 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[26-May-2022 08:11:08 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[07-Jun-2022 01:48:12 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[07-Jun-2022 01:48:12 UTC] PHP Warning:  include(inc/database.php): failed to open stream: No such file or directory in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[07-Jun-2022 01:48:12 UTC] PHP Warning:  include(): Failed opening 'inc/database.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/mypsmzaq/public_html/student/quiz.php on line 2
+[07-Jun-2022 01:48:12 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63
+[07-Jun-2022 01:48:12 UTC] PHP Notice:  Trying to access array offset on value of type null in /home2/mypsmzaq/public_html/student/quiz.php on line 63

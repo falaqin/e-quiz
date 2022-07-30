@@ -20,7 +20,7 @@ WHERE u_id='$id'";
 if($conn->query($sql))
 {
     //redirect to userphp page
-    header("Location:user_info.php");
+    header("Location:user_info.php?page=1");
 }
 else
 {

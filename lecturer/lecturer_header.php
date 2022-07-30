@@ -110,7 +110,7 @@ $call=mysqli_fetch_assoc($query);
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li>
-                                <a class="dropdown-item" href="student_info.php">Students Info</a>
+                                <a class="dropdown-item" href="student_info.php?page=1">Students Info</a>
                                 <a class="dropdown-item" href="student_form.php">Add new Student</a>
                             </li>
                         </ul>
@@ -122,14 +122,14 @@ $call=mysqli_fetch_assoc($query);
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li>
-                                <a class="dropdown-item" href="class_info.php">Classes Info</a>
+                                <a class="dropdown-item" href="class_info.php?page=1">Classes Info</a>
                                 <a class="dropdown-item" href="class_form.php">Add new Class</a>
                             </li>
                         </ul>
                     </li>
 
                     <li class="nav-item active">
-                        <a class="nav-link" href="quiz_list.php">Quiz List</a>
+                        <a class="nav-link" href="quiz_list.php?page=1">Quiz List</a>
                     </li>
 
                     <li class="nav-item active">

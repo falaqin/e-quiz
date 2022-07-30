@@ -59,11 +59,11 @@ session_start();
                 <img src="assets/logo_equiz_edit.png" alt="" style="width: 200px;">
                 <form action="" method="post">
                     <div class="form-group">
-                        <input type="text" name="user" class="form-control" placeholder="Matric Number" value="">
+                        <input type="text" name="user" class="form-control" placeholder="IC Number" value="">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="pass" class="form-control" placeholder="IC Number" value="">
+                        <input type="password" name="pass" class="form-control" placeholder="Password" value="">
                     </div>
 
                     <input type="submit" value="Login" name="submit" class="btn btn-primary">

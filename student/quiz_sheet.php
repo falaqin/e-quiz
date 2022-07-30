@@ -1,35 +1,36 @@
 <?php
-include('../inc/database.php');
-include('std_header_quizsheet.php');
-$quizID = $_GET['quizid'];
+    include('../inc/database.php');
+    include('std_header_quizsheet.php');
+    $quizID = $_GET['quizid'];
 
-$quizSQL = "SELECT * FROM quiz_list ql WHERE ql.id = $quizID";
-$queryQuiz = $conn->query($quizSQL);
-$callQuiz = mysqli_fetch_assoc($queryQuiz);
+    $quizSQL = "SELECT * FROM quiz_list ql WHERE ql.id = $quizID";
+    $queryQuiz = $conn->query($quizSQL);
+    $callQuiz = mysqli_fetch_assoc($queryQuiz);
 
-$QuestionSQL = "SELECT q.id, q.question, q.question_img, q.question_type FROM question q WHERE q.quiz_id = $quizID";
-$queryQuestion = $conn->query($QuestionSQL);
+    $QuestionSQL = "SELECT q.id, q.question, q.question_img, q.question_type FROM question q WHERE q.quiz_id = $quizID";
+    $queryQuestion = $conn->query($QuestionSQL);
 
-$checkingSQL = "SELECT * FROM student_score sc WHERE sc.std_id = $SQLstd_id AND quiz_id = $quizID";
-$queryCheck = $conn->query($checkingSQL);
-$callChecking = mysqli_fetch_assoc($queryCheck);
+    $checkingSQL = "SELECT * FROM student_score sc WHERE sc.std_id = $SQLstd_id AND quiz_id = $quizID";
+    $queryCheck = $conn->query($checkingSQL);
+    $callChecking = mysqli_fetch_assoc($queryCheck);
 
-if (isset($callChecking['id'])) {
-    if ($callChecking['id'] == '') {
-        $QueryFor_stdScore = "INSERT INTO student_score (quiz_id, std_id, std_points, total_points)
-    VALUES ('$quizID','$SQLstd_id','0','0');";
-        $RunQuery_stdScore = mysqli_query($conn, $QueryFor_stdScore);
-
+    if ($callQuiz['enable_retake_quiz'] == 0) {
+        if (!isset($callChecking['id'])) {
+            $QueryFor_stdScore = "INSERT INTO student_score (quiz_id, std_id, std_points, total_points)
+            VALUES ('$quizID','$SQLstd_id','0','0');";
+            $RunQuery_stdScore = mysqli_query($conn, $QueryFor_stdScore);
+        } else {
+            header("Location:index.php");
+        }
     } else {
-        header("Location:index.php");
+        $QueryFor_stdScore = "INSERT INTO student_score (quiz_id, std_id, std_points, total_points)
+        VALUES ('$quizID','$SQLstd_id','0','0');";
+        $RunQuery_stdScore = mysqli_query($conn, $QueryFor_stdScore);
     }
-}
 
-
-$scoreID_SQL = "SELECT * FROM student_score WHERE std_id = '$SQLstd_id' AND quiz_id = $quizID";
-$scoreIDquery = $conn->query($scoreID_SQL);
-$call_scoreID = mysqli_fetch_assoc($scoreIDquery);
-
+    $scoreID_SQL = "SELECT * FROM student_score WHERE std_id = '$SQLstd_id' AND quiz_id = $quizID ORDER BY id DESC";
+    $scoreIDquery = $conn->query($scoreID_SQL);
+    $call_scoreID = mysqli_fetch_assoc($scoreIDquery);
 ?>
 <title>Quiz Sheet</title>
 
@@ -191,16 +192,16 @@ $call_scoreID = mysqli_fetch_assoc($scoreIDquery);
 
 <script>
     function confirmAnswer() {
-    var conf=confirm('Are you sure you want to submit?');
-    if(conf)
-    {
-        return;
+        var conf=confirm('Are you sure you want to submit?');
+        if(conf)
+        {
+            return;
+        }
+        else
+        {
+            return false;
+        }
     }
-    else
-    {
-        return false;
-    }
-}
 </script>
 
 <script>

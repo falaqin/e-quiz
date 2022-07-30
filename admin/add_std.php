@@ -23,7 +23,7 @@
     if($conn->query($sql))
     {
         //redirect to user page
-        header("Location:student_info.php");
+        header("Location:student_info.php?page=1");
     }
     else
     {

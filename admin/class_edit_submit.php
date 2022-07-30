@@ -11,7 +11,7 @@ WHERE class_id = '$id'";
 if($conn->query($sql))
 {
     //redirect to userphp page
-    header("Location:class_info.php");
+    header("Location:class_info.php?page=1");
 }
 else
 {

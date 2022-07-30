@@ -15,7 +15,7 @@ $result = mysqli_fetch_assoc($queryClass);
 <div class="container bg-gradient text-light">
     <br>
     <h2>
-        Edit Class <a href="class_info.php" class="btn btn-sm btn-secondary">Back</a>
+        Edit Class <a href="class_info.php?page=1" class="btn btn-sm btn-secondary">Back</a>
     </h2>
 
     <form action="class_edit_submit.php" method="post">

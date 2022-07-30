@@ -11,6 +11,6 @@ $sql="DELETE FROM student WHERE std_id='$id'";
 if($conn->query($sql))
 {
     //redirect to user
-    header("Location:student_info.php");
+    header("Location:student_info.php?page=1");
 }
 ?>

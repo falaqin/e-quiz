@@ -32,7 +32,7 @@ while ($result=$class->fetch_assoc()) {
                     </div>
 
                     <div class="form-group">
-                        <label for="matrix">Matric Number</label>
+                        <label for="matrix">IC Number</label>
                         <input type="text" name="matrix[]" id="" class="form-control" required>
                     </div>
 
@@ -109,7 +109,7 @@ while ($result=$class->fetch_assoc()) {
             <?php } ?>
             <div class="card text-dark shadow">
                 <div class="card-body">
-                    <a href="student_info.php" class="btn btn-secondary">Back</a>
+                    <a href="student_info.php?page=1" class="btn btn-secondary">Back</a>
                     <input type="submit" name="save" id="" class="btn btn-primary">
                 </div>
             </div>

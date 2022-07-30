@@ -2,9 +2,9 @@
         <!-- FOOTER -->
         <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
             <div class="container text-center">
-            <small>E-QUIZ @ 2022 - Make It Easy</small>
-                <p>System is developed for PSMZA. All rights to JPA / PSMZA</p>
-                <p>Falaqin - Adib - Ain</p>
+            <small>E-Quiz</small>
+                <p>All rights to JPNS</p>
+                <p>Anas Nordin</p>
             </div>
         </footer>
     </body>

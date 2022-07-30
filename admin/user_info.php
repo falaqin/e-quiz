@@ -5,6 +5,10 @@ include("admin_header.php");
 //import db con
 include('../inc/database.php');
 
+if ($_GET['page'] == '') {
+    $_GET['page'] = 1;
+}
+
 $rpp = 10;
 //check set page
 isset($_GET['page']) ? $page = $_GET['page'] : $page = 0;
@@ -61,7 +65,7 @@ $query2=$conn->query($sql2); */
             </div>
         </div>
     </form>
-    <span><?php if(isset($_GET['page'])) { echo 'Page ', $_GET['page']; } else { echo 'Page 1'; } ?></span>
+    <span>Page <?php echo $_GET['page']?></span>
     <div class="table-responsive table-scroll" style="max-height: 700px;">
         <table class="table table-dark table-striped text-light shadow table-bordered table-hover">
             <thead>
@@ -85,7 +89,7 @@ $query2=$conn->query($sql2); */
                     $query2 = $conn->query($sql2); 
                     //set val for number of access lvl
                     $access[1]='Admin';
-                    $access[2]='Lecturer';
+                    $access[2]='Teacher';
 
                     //initiate num
                     $no=1;

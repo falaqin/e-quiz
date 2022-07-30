@@ -2,7 +2,7 @@
 include("../inc/database.php");
 include("std_header.php");
 
-$sqlHistory = "SELECT ql.title, sc.date_updated, sc.std_points, sc.total_points FROM quiz_list ql INNER JOIN student_score sc WHERE ql.id = sc.quiz_id AND sc.std_id = $SQLstd_id";
+$sqlHistory = "SELECT ql.title, sc.date_updated,   sc.std_points, sc.total_points FROM quiz_list ql INNER JOIN student_score sc WHERE ql.id = sc.quiz_id AND sc.std_id = $SQLstd_id ORDER BY sc.id DESC";
 $queryHistory = $conn->query($sqlHistory);
 ?>
 

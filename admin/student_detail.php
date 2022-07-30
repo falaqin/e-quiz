@@ -37,7 +37,7 @@ $query=$conn->query($sql);
             <tr>
                 <th>No</th>
                 <th>Name</th>
-                <th>Matric No.</th>
+                <th>IC No.</th>
                 <th>Session</th>
             </tr>
         </thead>

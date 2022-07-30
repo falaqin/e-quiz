@@ -33,7 +33,7 @@ while ($result=$class->fetch_assoc()) {
                     </div>
 
                     <div class="form-group">
-                        <label for="matrix">Matrics Number</label>
+                        <label for="matrix">IC Number</label>
                         <input type="text" name="matrix[]" id="" class="form-control" required>
                     </div>
 

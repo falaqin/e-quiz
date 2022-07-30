@@ -16,7 +16,7 @@ if($conn->query($sql))
     if ($page > 0) {
         header("Location:class_info.php?page=$page");
     } else {
-        header("Location:class_info.php");
+        header("Location:class_info.php?page=1");
     }
 }
 
